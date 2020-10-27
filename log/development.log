@@ -1,0 +1,132 @@
+Started GET "/" for 127.0.0.1 at 2020-10-16 14:05:36 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 2829ms (Views: 2826.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-17 04:17:45 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 548ms (Views: 545.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-17 04:20:04 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 112ms (Views: 110.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-17 04:23:54 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "$font ": expected ":", was "'Times New Roma..."):
+    10:     %meta{'name' => 'description', 'content' => t('app_description')}
+    11:     %meta{'name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'}
+    12: 
+    13:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    14:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    15:     = javascript_include_tag 'modernizr'
+    16:     = csrf_meta_tags
+  
+app/assets/stylesheets/application.scss:20
+app/views/layouts/application.html.haml:13:in `_app_views_layouts_application_html_haml__1621720706532991908_70105957770700'
+Started GET "/" for 127.0.0.1 at 2020-10-17 04:25:06 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "$font ": expected ":", was "'Times New Roma..."):
+    10:     %meta{'name' => 'description', 'content' => t('app_description')}
+    11:     %meta{'name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'}
+    12: 
+    13:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    14:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    15:     = javascript_include_tag 'modernizr'
+    16:     = csrf_meta_tags
+  
+app/assets/stylesheets/application.scss:20
+app/views/layouts/application.html.haml:13:in `_app_views_layouts_application_html_haml__1621720706532991908_47127756518660'
+Started GET "/" for 127.0.0.1 at 2020-10-17 04:25:09 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "$font ": expected ":", was "'Times New Roma..."):
+    10:     %meta{'name' => 'description', 'content' => t('app_description')}
+    11:     %meta{'name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'}
+    12: 
+    13:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    14:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    15:     = javascript_include_tag 'modernizr'
+    16:     = csrf_meta_tags
+  
+app/assets/stylesheets/application.scss:20
+app/views/layouts/application.html.haml:13:in `_app_views_layouts_application_html_haml__1621720706532991908_70105959708460'
+Started GET "/" for 127.0.0.1 at 2020-10-17 04:25:29 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "  padding 10px": expected "{", was ";"):
+    10:     %meta{'name' => 'description', 'content' => t('app_description')}
+    11:     %meta{'name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'}
+    12: 
+    13:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    14:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    15:     = javascript_include_tag 'modernizr'
+    16:     = csrf_meta_tags
+  
+app/assets/stylesheets/application.scss:27
+app/views/layouts/application.html.haml:13:in `_app_views_layouts_application_html_haml__1621720706532991908_70105965048600'
+Started GET "/" for 127.0.0.1 at 2020-10-17 04:25:48 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 821ms (Views: 820.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-17 04:26:38 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 619ms (Views: 618.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-17 04:26:58 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 652ms (Views: 650.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-17 04:28:01 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 638ms (Views: 637.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-23 10:58:22 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (26.8ms)
+Completed 200 OK in 596ms (Views: 593.4ms | ActiveRecord: 0.0ms)
+
+

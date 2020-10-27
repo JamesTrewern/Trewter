@@ -1,0 +1,20 @@
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-10-17 04:32:08 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 2320ms (Views: 2317.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-10-17 04:34:15 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 102ms (Views: 99.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
