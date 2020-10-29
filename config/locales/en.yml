@@ -30,10 +30,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  app_title: My Notes
-  app_description: A place where you can keep all of your Notes
-  
+  app_title: Twerter Book
+  app_description: A place where you and your friends can pretend to be happier than you are so everyone is jealous of you
+
   home:
     home:
-      title: My Notes
-      welcome: Welcome to my notes site!
+      title: Twerter Book
+      welcome: Welcome to Twerter Book
