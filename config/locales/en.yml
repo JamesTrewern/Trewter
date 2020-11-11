@@ -32,8 +32,24 @@
 en:
   app_title: Twerter Book
   app_description: A place where you and your friends can pretend to be happier than you are so everyone is jealous of you
-
   home:
     home:
       title: Twerter Book
       welcome: Welcome to Twerter Book
+
+    contact:
+      title: Contact us
+      contact_us: Complete form pls
+      name: "Name:"
+      enter_name: Enter your name
+      email: "Email:"
+      enter_email: Enter your email address
+      telephone: "Telephone:"
+      enter_telephone: Enter your telephone number
+      message: "Message:"
+      enter_message: What do you want to say?
+      submit: Contact Us
+
+    request_contact:
+      no_email: You must supply an email address
+      email_sent: Thanks you. We will be in touch

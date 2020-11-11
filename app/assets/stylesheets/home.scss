@@ -1,3 +1,17 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$font: 'Times New Romanm','Times',serif;
+$eggShell: #ede5a8;
+$babyPink: #ffa3c5;
+$babyBlue: #99c3ff;
+$lavender: #e3d1ff;
+
+p{
+
+}
+
+form label, form input {
+  display: block;
+  margin: 10px;
+}

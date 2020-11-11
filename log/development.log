@@ -363,3 +363,1052 @@ Processing by HomeController#home as HTML
 Completed 200 OK in 113ms (Views: 110.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2020-10-30 11:16:13 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (52.2ms)
+Completed 200 OK in 1392ms (Views: 1388.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 11:21:07 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 919ms (Views: 917.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 11:23:44 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (4.7ms)
+Completed 200 OK in 782ms (Views: 779.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 11:28:00 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 602ms (Views: 601.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 11:32:07 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 126ms (Views: 123.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 11:32:41 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 661ms (Views: 659.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 11:34:33 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 137ms (Views: 134.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 11:35:43 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 115ms (Views: 112.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 11:51:37 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 161ms (Views: 158.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 11:54:58 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 796ms (Views: 793.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 11:59:17 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 141ms (Views: 138.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 12:04:18 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 105ms (Views: 102.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 12:04:55 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 124ms (Views: 121.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 12:06:52 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 155ms (Views: 151.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 12:08:51 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 371ms (Views: 368.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 12:11:36 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 138ms (Views: 135.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 12:13:54 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 148ms (Views: 145.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 12:21:30 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (home.js):
+    13:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    14:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    15:     = javascript_include_tag 'modernizr'
+    16:     = javascript_include_tag 'home', 'data-turbolinks-track' => true
+    17:     = csrf_meta_tags
+    18: 
+    19: 
+  
+app/views/layouts/application.html.haml:16:in `_app_views_layouts_application_html_haml__2443058252234108483_47132999023360'
+Started GET "/" for 127.0.0.1 at 2020-10-30 12:22:35 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 265ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reload' for #<#<Class:0x000055db0b562a48>:0x000055db0b550550>
+Did you mean?  load):
+    13:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    14:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    15:     = javascript_include_tag 'modernizr'
+    16:     = javascript_include_tag 'home', 'data-turbolinks-track' => reload
+    17:     = csrf_meta_tags
+    18: 
+    19: 
+  
+app/views/layouts/application.html.haml:16:in `_app_views_layouts_application_html_haml___550585273278120558_47199638115940'
+Started GET "/" for 127.0.0.1 at 2020-10-30 12:23:26 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (home.js):
+    13:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    14:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    15:     = javascript_include_tag 'modernizr'
+    16:     = javascript_include_tag 'home', 'data-turbolinks-track' => "reload"
+    17:     = csrf_meta_tags
+    18: 
+    19: 
+  
+app/views/layouts/application.html.haml:16:in `_app_views_layouts_application_html_haml___4249716635887504976_47428943227940'
+Started GET "/" for 127.0.0.1 at 2020-10-30 12:32:58 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (home.js):
+    13:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    14:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    15:     = javascript_include_tag 'modernizr'
+    16:     = javascript_include_tag 'home'
+    17:     = csrf_meta_tags
+    18: 
+    19: 
+  
+app/views/layouts/application.html.haml:16:in `_app_views_layouts_application_html_haml___2746269293406424315_46945693154360'
+Started POST "/__web_console/repl_sessions/c6004fdc660a687dff919a7362fcf4c5/trace" for 127.0.0.1 at 2020-10-30 12:33:18 -0700
+Started POST "/__web_console/repl_sessions/c6004fdc660a687dff919a7362fcf4c5/trace" for 127.0.0.1 at 2020-10-30 12:33:41 -0700
+Started POST "/__web_console/repl_sessions/c6004fdc660a687dff919a7362fcf4c5/trace" for 127.0.0.1 at 2020-10-30 12:33:50 -0700
+Started GET "/" for 127.0.0.1 at 2020-10-30 14:05:12 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (home.js):
+    13:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    14:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    15:     = javascript_include_tag 'modernizr'
+    16:     = javascript_include_tag 'home'
+    17:     = csrf_meta_tags
+    18: 
+    19: 
+  
+app/views/layouts/application.html.haml:16:in `_app_views_layouts_application_html_haml__4494623893086190093_47173361521100'
+Started GET "/" for 127.0.0.1 at 2020-10-30 14:06:18 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 112ms (Views: 109.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 14:07:22 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 122ms (Views: 119.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 14:15:42 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 715ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$font".):
+    10:     %meta{'name' => 'description', 'content' => t('app_description')}
+    11:     %meta{'name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'}
+    12: 
+    13:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    14:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    15:     = javascript_include_tag 'modernizr'
+    16:     = csrf_meta_tags
+  
+app/assets/stylesheets/home.scss:5
+app/views/layouts/application.html.haml:13:in `_app_views_layouts_application_html_haml___315676581372605100_47083509169360'
+Started GET "/" for 127.0.0.1 at 2020-10-30 14:16:07 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 631ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$babyBlue".):
+    10:     %meta{'name' => 'description', 'content' => t('app_description')}
+    11:     %meta{'name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'}
+    12: 
+    13:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    14:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    15:     = javascript_include_tag 'modernizr'
+    16:     = csrf_meta_tags
+  
+app/assets/stylesheets/home.scss:7
+app/views/layouts/application.html.haml:13:in `_app_views_layouts_application_html_haml___315676581372605100_69818686425780'
+Started GET "/" for 127.0.0.1 at 2020-10-30 14:16:31 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 744ms (Views: 743.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 14:18:59 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 692ms (Views: 691.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 14:19:22 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 157ms (Views: 154.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-30 14:20:04 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 175ms (Views: 172.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:06:08 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 177ms (Views: 174.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:08:43 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 713ms (Views: 712.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:10:00 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 611ms (Views: 610.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:10:55 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 657ms (Views: 656.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:40:36 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 868ms (Views: 865.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:41:15 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 112ms (Views: 109.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:41:56 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 688ms (Views: 687.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:42:35 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 621ms (Views: 620.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:48:55 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::CBT):
+    23:       %p= t('app_description')
+    24:       %div{'class' => 'navigationBar'}
+    25:         %div{'class' => 'navigationBarElement', 'id' => 'nav1'}
+    26:           %h2= CBT
+    27:           %p{'class' => 'pageDescription'}
+    28:             Cock and ball torture (CBT), penis torture or dick torture is a sexual activity involving application of
+    29:             pain or constriction to the penis or testicles. This may involve directly painful activities, such as genital
+  
+app/views/layouts/application.html.haml:26:in `_app_views_layouts_application_html_haml___3540342455223447488_47415963699560'
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:49:21 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 116ms (Views: 113.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:50:48 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 714ms (Views: 713.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:51:05 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 639ms (Views: 638.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:51:39 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 673ms (Views: 672.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:51:54 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 687ms (Views: 686.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:52:10 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 650ms (Views: 649.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:52:43 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 666ms (Views: 665.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:55:24 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 160ms (Views: 157.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:56:10 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 152ms (Views: 149.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 07:57:57 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 157ms (Views: 154.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 08:01:09 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 145ms (Views: 142.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 08:11:06 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 163ms (Views: 160.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2020-10-31 08:11:59 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/articles"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-10-31 08:12:17 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 162ms (Views: 159.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-31 08:12:40 -0700
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 61ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 08:21:49 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/james/RubyWorkspace/TrewterBook/app/assets/config
+  /home/james/RubyWorkspace/TrewterBook/app/assets/images
+  /home/james/RubyWorkspace/TrewterBook/app/assets/javascripts
+  /home/james/RubyWorkspace/TrewterBook/app/assets/stylesheets
+  /home/james/.rvm/gems/ruby-2.5.8/gems/modernizr-rails-2.7.1/vendor/assets/javascripts
+  /home/james/.rvm/gems/ruby-2.5.8/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/james/.rvm/gems/ruby-2.5.8/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /home/james/.rvm/gems/ruby-2.5.8/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /home/james/.rvm/gems/ruby-2.5.8/gems/actionview-5.2.4.4/lib/assets/compiled
+  /home/james/.rvm/gems/ruby-2.5.8/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/james/RubyWorkspace/TrewterBook/node_modules
+  /home/james/.rvm/gems/ruby-2.5.8/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/james/.rvm/gems/ruby-2.5.8/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/james/.rvm/gems/ruby-2.5.8/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/james/.rvm/gems/ruby-2.5.8/gems/bootstrap-sass-3.3.7/assets/images):
+    10:     %meta{'name' => 'description', 'content' => t('app_description')}
+    11:     %meta{'name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'}
+    12: 
+    13:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    14:     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    15:     = javascript_include_tag 'modernizr'
+    16:     = csrf_meta_tags
+  
+app/assets/javascripts/application.js:17
+app/views/layouts/application.html.haml:13:in `_app_views_layouts_application_html_haml___4561492270084172501_47242431071300'
+Started GET "/articles" for 127.0.0.1 at 2020-11-01 09:02:56 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/articles"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/articles" for 127.0.0.1 at 2020-11-01 12:04:01 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/articles"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:05:53 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 1695ms (Views: 1685.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:06:12 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 46ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:07:15 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 235ms (Views: 231.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:09:46 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 859ms (Views: 856.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:14:38 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/james/RubyWorkspace/TrewterBook/app/views/layouts/application.html.haml:27: syntax error, unexpected =>, expecting ')'
+... => 'navBarDescription' 'id' => navDesc1)).to_s);; _hamlout....
+...                             ^~
+/home/james/RubyWorkspace/TrewterBook/app/views/layouts/application.html.haml:27: syntax error, unexpected ')', expecting keyword_end
+...ption' 'id' => navDesc1)).to_s);; _hamlout.buffer << (">\nCo...
+...                              ^):
+  
+app/views/layouts/application.html.haml:27: syntax error, unexpected =>, expecting ')'
+app/views/layouts/application.html.haml:27: syntax error, unexpected ')', expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:15:09 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/james/RubyWorkspace/TrewterBook/app/views/layouts/application.html.haml:27: syntax error, unexpected =>, expecting ')'
+... => 'navBarDescription' 'id' => 'navDesc1')).to_s);; _hamlou...
+...                             ^~
+/home/james/RubyWorkspace/TrewterBook/app/views/layouts/application.html.haml:27: syntax error, unexpected ')', expecting keyword_end
+...ion' 'id' => 'navDesc1')).to_s);; _hamlout.buffer << (">\nCo...
+...                              ^):
+  
+app/views/layouts/application.html.haml:27: syntax error, unexpected =>, expecting ')'
+app/views/layouts/application.html.haml:27: syntax error, unexpected ')', expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:15:36 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 191ms (Views: 188.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:16:02 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 226ms (Views: 223.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:18:29 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 221ms (Views: 218.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:18:44 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 234ms (Views: 231.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:19:09 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 223ms (Views: 220.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:19:27 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 208ms (Views: 205.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:20:00 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 194ms (Views: 191.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:20:17 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 228ms (Views: 225.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-01 12:20:30 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 226ms (Views: 222.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 10:03:08 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 627ms (Views: 605.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 10:05:35 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 872ms (Views: 871.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 10:13:22 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 134ms (Views: 131.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 10:14:26 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 129ms (Views: 127.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 10:15:15 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 45ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 10:16:11 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 10:18:01 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 13:22:49 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 112ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 13:24:04 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (8.4ms)
+Completed 200 OK in 143ms (Views: 140.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 13:24:37 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 16:56:32 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 120ms (Views: 117.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 16:57:25 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 16:57:34 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 149ms (Views: 146.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 16:58:32 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/james/RubyWorkspace/TrewterBook/app/views/home/home.html.haml:1: syntax error, unexpected '.', expecting ')'
+...Haml::Helpers.html_escape(((t(.'title')
+...                              ^
+/home/james/RubyWorkspace/TrewterBook/app/views/home/home.html.haml:2: syntax error, unexpected ')', expecting keyword_end
+)).to_s);).to_s);; _hamlout.buffer << ("</p>\...
+               ^):
+  
+app/views/home/home.html.haml:1: syntax error, unexpected '.', expecting ')'
+app/views/home/home.html.haml:2: syntax error, unexpected ')', expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2020-11-08 17:00:16 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (8.5ms)
+Completed 200 OK in 144ms (Views: 141.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-08 17:01:44 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-11 09:25:40 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (50.1ms)
+Completed 200 OK in 692ms (Views: 689.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 09:25:49 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 48ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-11 09:35:40 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 155ms (Views: 152.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-11 09:40:25 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (4.1ms)
+Completed 200 OK in 140ms (Views: 137.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-11 09:55:09 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 148ms (Views: 144.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 09:55:17 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:6: syntax error, unexpected tLABEL
+...lpers.html_escape((( label_tag:name, t('.name')
+...                     ^~~~~~~~~~
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:6: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+...e((( label_tag:name, t('.name')
+...                               ^
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:7: syntax error, unexpected tLABEL
+....html_escape((( text_field_tag:name, '', title: t('.enter_na...
+...                ^~~~~~~~~~~~~~~
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:7: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+...ape((( text_field_tag:name, '', title: t('.enter_name'), siz...
+...                              ^
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:7: syntax error, unexpected ',', expecting ')'
+...e, '', title: t('.enter_name'), size: 50
+...                              ^
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:9: syntax error, unexpected tLABEL
+...lpers.html_escape((( label_tag:email, t('.email')
+...                     ^~~~~~~~~~
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:9: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+...(( label_tag:email, t('.email')
+...                               ^
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:10: syntax error, unexpected tLABEL
+...html_escape((( email_field_tag:email, '', title: t('.enter_e...
+...               ^~~~~~~~~~~~~~~~
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:10: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+...e((( email_field_tag:email, '', title: t('.enter_email')
+...                              ^
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:12: syntax error, unexpected tLABEL
+...lpers.html_escape((( label_tag:telephone, t('.telephone')
+...                     ^~~~~~~~~~
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:12: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+..._tag:telephone, t('.telephone')
+...                               ^
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:13: syntax error, unexpected tLABEL
+....html_escape((( text_field_tag:message, '', title: t('.enter...
+...                ^~~~~~~~~~~~~~~
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:13: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+...((( text_field_tag:message, '', title: t('.enter_message'), ...
+...                              ^
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:13: syntax error, unexpected ',', expecting ')'
+...'', title: t('.enter_message'), size: 100
+...                              ^
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:16: syntax error, unexpected keyword_end, expecting ')'
+...t.buffer << ("\n".freeze);; end;; _hamlout.buffer << ((::Ham...
+...                            ^~~
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:16: syntax error, unexpected keyword_ensure, expecting ')'
+...:Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer....
+...                         ^~~~~~
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:16: syntax error, unexpected keyword_end, expecting ')'
+...uffer.upper if @haml_buffer;end;
+...                            ^~~
+/home/james/RubyWorkspace/TrewterBook/app/views/home/contact.html.haml:19: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/home/contact.html.haml:6: syntax error, unexpected tLABEL
+app/views/home/contact.html.haml:6: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+app/views/home/contact.html.haml:7: syntax error, unexpected tLABEL
+app/views/home/contact.html.haml:7: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+app/views/home/contact.html.haml:7: syntax error, unexpected ',', expecting ')'
+app/views/home/contact.html.haml:9: syntax error, unexpected tLABEL
+app/views/home/contact.html.haml:9: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+app/views/home/contact.html.haml:10: syntax error, unexpected tLABEL
+app/views/home/contact.html.haml:10: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+app/views/home/contact.html.haml:12: syntax error, unexpected tLABEL
+app/views/home/contact.html.haml:12: syntax error, unexpected '\n', expecting &. or :: or '[' or '.'
+app/views/home/contact.html.haml:13: syntax error, unexpected tLABEL
+app/views/home/contact.html.haml:13: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+app/views/home/contact.html.haml:13: syntax error, unexpected ',', expecting ')'
+app/views/home/contact.html.haml:16: syntax error, unexpected keyword_end, expecting ')'
+app/views/home/contact.html.haml:16: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/home/contact.html.haml:16: syntax error, unexpected keyword_end, expecting ')'
+app/views/home/contact.html.haml:19: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 09:58:47 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (160.3ms)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `request_contact_path' for #<#<Class:0x000055704a54e2b8>:0x000055704a68a460>):
+    1: %h1= t('.title')
+    2: %p= t('.contact_us')
+    3: 
+    4: = form_tag request_contact_path, method: 'post' do
+    5: 
+    6:   = label_tag :name, t('.name')
+    7:   = text_field_tag :name, '', title: t('.enter_name'), size: 50
+  
+app/views/home/contact.html.haml:4:in `_app_views_home_contact_html_haml__2846746809722559303_46970386575260'
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 10:01:21 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 10:05:03 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 812ms (Views: 811.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 10:07:03 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:09:48 -0800
+  
+AbstractController::ActionNotFound (The action 'request_contact' could not be found for HomeController):
+  
+actionpack (5.2.4.4) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.4.4) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'

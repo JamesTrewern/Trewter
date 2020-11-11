@@ -18,3 +18,258 @@ Processing by HomeController#home as HTML
   Rendered home/home.html.haml within layouts/application (2.0ms)
 Completed 200 OK in 102ms (Views: 99.8ms | ActiveRecord: 0.0ms)
   [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+HomeControllerTest: test_should_get_contact
+-------------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 09:31:46 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 2518ms (Views: 2515.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-11-11 09:31:48 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-11-11 09:36:07 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 83ms (Views: 81.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+HomeControllerTest: test_should_get_contact
+-------------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 09:36:07 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+HomeControllerTest: test_should_post_request_contact_but_no_email
+-----------------------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:28:53 -0800
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-11-11 10:28:53 -0800
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+HomeControllerTest: test_should_post_request_contact
+----------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:28:53 -0800
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+HomeControllerTest: test_should_get_contact
+-------------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 10:28:53 -0800
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+HomeControllerTest: test_should_post_request_contact
+----------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:30:59 -0800
+Processing by HomeController#request_contact as HTML
+  Parameters: {"name"=>"Mathew", "email"=>"mathew@me.com", "telephone"=>"1235467890", "message"=>"Hello"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+HomeControllerTest: test_should_post_request_contact_but_no_email
+-----------------------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:30:59 -0800
+Processing by HomeController#request_contact as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+HomeControllerTest: test_should_get_contact
+-------------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 10:30:59 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-11-11 10:30:59 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+HomeControllerTest: test_should_get_contact
+-------------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 10:31:51 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+HomeControllerTest: test_should_post_request_contact
+----------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:31:51 -0800
+Processing by HomeController#request_contact as HTML
+  Parameters: {"name"=>"Mathew", "email"=>"mathew@me.com", "telephone"=>"1235467890", "message"=>"Hello"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-11-11 10:31:52 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+HomeControllerTest: test_should_post_request_contact_but_no_email
+-----------------------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:31:52 -0800
+Processing by HomeController#request_contact as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+HomeControllerTest: test_should_get_contact
+-------------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 10:32:39 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-11-11 10:32:39 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+HomeControllerTest: test_should_post_request_contact
+----------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:32:39 -0800
+Processing by HomeController#request_contact as HTML
+  Parameters: {"name"=>"Mathew", "email"=>"mathew@me.com", "telephone"=>"1235467890", "message"=>"Hello"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+HomeControllerTest: test_should_post_request_contact_but_no_email
+-----------------------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:32:39 -0800
+Processing by HomeController#request_contact as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-11-11 10:33:44 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 2181ms (Views: 2177.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+HomeControllerTest: test_should_post_request_contact
+----------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:33:46 -0800
+Processing by HomeController#request_contact as HTML
+  Parameters: {"name"=>"Mathew", "email"=>"mathew@me.com", "telephone"=>"1235467890", "message"=>"Hello"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+HomeControllerTest: test_should_post_request_contact_but_no_email
+-----------------------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:33:46 -0800
+Processing by HomeController#request_contact as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+HomeControllerTest: test_should_get_contact
+-------------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 10:33:46 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-11-11 10:34:16 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 104ms (Views: 101.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+HomeControllerTest: test_should_get_contact
+-------------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 10:34:16 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+HomeControllerTest: test_should_post_request_contact
+----------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:34:16 -0800
+Processing by HomeController#request_contact as HTML
+  Parameters: {"name"=>"Mathew", "email"=>"mathew@me.com", "telephone"=>"1235467890", "message"=>"Hello"}
+Redirected to http://www.example.com/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+HomeControllerTest: test_should_post_request_contact_but_no_email
+-----------------------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 10:34:16 -0800
+Processing by HomeController#request_contact as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m

@@ -18,14 +18,43 @@
 
 $font: 'Times New Romanm','Times',serif;
 $eggShell: #ede5a8;
+$babyPink: #ffa3c5;
+$babyBlue: #99c3ff;
+$lavender: #e3d1ff;
+
+
+
+div.pageHeading{
+  height: 200px;
+  border-style: solid;
+  border-color: $lavender;
+  background-color: $babyPink;
+  height: 40%
+}
 
 body{
   font-family: $font;
-  background-color: $eggShell;
-  margin: 10px;
-  padding: 10px;
+  background-color: $babyBlue;
 }
 
-h1{
-  text-transform: uppercase;
+div.navigationBar{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  border-style: solid;
+  border-color: $lavender;
+  background-color: $babyBlue;
+  height: 50%;
+}
+
+div.navigationBarElement{
+  height: auto;
+  width: 30%;
+  border-style: solid;
+  border-color: $lavender;
+  background-color: $babyBlue;
+}
+
+p.navBarDescription{
+  font-size: 15px;
 }
