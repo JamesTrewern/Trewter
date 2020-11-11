@@ -1708,3 +1708,66 @@ ContactMailer#contact_email: processed outbound mail in 4.7ms
 Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/contact" for 127.0.0.1 at 2020-11-11 12:38:55 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (8.8ms)
+Completed 200 OK in 151ms (Views: 147.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-11 12:39:19 -0800
+Processing by HomeController#request_contact as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GhkobYtIA9UzRPXN5PxwbZTmWBy48kXoMmjMDWCrDxDo97cfwryTSmmyaRw77jbBOhdOZZAzpZfZlmdDFwqJrQ==", "name"=>"james", "email"=>"6@9.com", "message"=>"your gay lol", "commit"=>"Contact Us"}
+  Rendering contact_mailer/contact_email.en.html.haml within layouts/mailer
+  Rendered contact_mailer/contact_email.en.html.haml within layouts/mailer (1.4ms)
+ContactMailer#contact_email: processed outbound mail in 98.8ms
+Sent mail to info@twerterbook.com (27.7ms)
+Date: Wed, 11 Nov 2020 12:39:19 -0800
+From: info@tewerterbook.com
+To: info@twerterbook.com
+Cc: 6@9.com
+Message-ID: <5fac4bf772079_1b2e2b272d34e0e861576@ubuntu.mail>
+Subject: Contact email
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Dear Twerter Book,</p>
+<p>Could you get in touch with me please?</p>
+<dl>
+<dt>Name:</dt>
+<dd>james</dd>
+<dt>Email:</dt>
+<dd>6@9.com</dd>
+<dt>Telephone</dt>
+<dd></dd>
+</dl>
+<p>your gay lol</p>
+<p>Thanks</p>
+<p>james</p>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 192ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-11 12:39:19 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
