@@ -1262,3 +1262,200 @@ ContactMailerTest: test_should_return_contact_email
   Rendered contact_mailer/contact_email.en.html.haml within layouts/mailer (0.1ms)
 ContactMailer#contact_email: processed outbound mail in 0.9ms
   [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "profiles" ("email", "password", "first_name", "surname", "dob", "bio", "picture_url", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 'MyString', '2020-11-17', 'MyText', 'MyString', '2020-11-17 12:06:11.761705', '2020-11-17 12:06:11.761705', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "profiles" ("email", "password", "first_name", "surname", "dob", "bio", "picture_url", "created_at", "updated_at", "id") VALUES ('MyString1', 'MyText', 'MyString', 'MyString', '2020-11-17', 'MyText', 'MyString', '2020-11-17 12:06:11.761705', '2020-11-17 12:06:11.761705', 298486374)[0m
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+ContactMailerTest: test_should_return_contact_email
+---------------------------------------------------
+  Rendering contact_mailer/contact_email.en.html.haml within layouts/mailer
+  Rendered contact_mailer/contact_email.en.html.haml within layouts/mailer (3.8ms)
+ContactMailer#contact_email: processed outbound mail in 10.0ms
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-11-17 04:06:11 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 71ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+HomeControllerTest: test_should_get_contact
+-------------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2020-11-17 04:06:11 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+HomeControllerTest: test_should_post_request_contact
+----------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-17 04:06:11 -0800
+Processing by HomeController#request_contact as HTML
+  Parameters: {"name"=>"Mathew", "email"=>"mathew@me.com", "telephone"=>"1235467890", "message"=>"Hello"}
+  Rendering contact_mailer/contact_email.en.html.haml within layouts/mailer
+  Rendered contact_mailer/contact_email.en.html.haml within layouts/mailer (0.1ms)
+ContactMailer#contact_email: processed outbound mail in 0.7ms
+Sent mail to info@twerterbook.com (1.3ms)
+Date: Tue, 17 Nov 2020 04:06:11 -0800
+From: info@twerterbook.com
+To: info@twerterbook.com
+Cc: mathew@me.com
+Message-ID: <5fb3bcb3f340e_5b242af0f85945ac706ba@ubuntu.mail>
+Subject: Contact email
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Dear Twerter Book,</p>
+<p>Could you get in touch with me please?</p>
+<dl>
+<dt>Name:</dt>
+<dd>Mathew</dd>
+<dt>Email:</dt>
+<dd>mathew@me.com</dd>
+<dt>Telephone</dt>
+<dd>1235467890</dd>
+</dl>
+<p>Hello</p>
+<p>Thanks</p>
+<p>Mathew</p>
+
+  </body>
+</html>
+
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+HomeControllerTest: test_should_post_request_contact_but_no_email
+-----------------------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-17 04:06:11 -0800
+Processing by HomeController#request_contact as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProfilesControllerTest: test_should_update_profile
+--------------------------------------------------
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/profiles/980190962" for 127.0.0.1 at 2020-11-17 04:06:12 -0800
+Processing by ProfilesController#update as HTML
+  Parameters: {"profile"=>{"bio"=>"MyText", "dob"=>"2020-11-17", "email"=>"MyString", "first_name"=>"MyString", "password"=>"[FILTERED]", "picture_url"=>"MyString", "surname"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/profiles/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+ProfilesControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/profiles/new" for 127.0.0.1 at 2020-11-17 04:06:12 -0800
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.haml within layouts/application
+  Rendered profiles/_form.html.haml (4.6ms)
+  Rendered profiles/new.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ProfilesControllerTest: test_should_show_profile
+------------------------------------------------
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/profiles/980190962" for 127.0.0.1 at 2020-11-17 04:06:12 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering profiles/show.html.haml within layouts/application
+  Rendered profiles/show.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+ProfilesControllerTest: test_should_get_index
+---------------------------------------------
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/profiles" for 127.0.0.1 at 2020-11-17 04:06:12 -0800
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.haml within layouts/application
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProfilesControllerTest: test_should_create_profile
+--------------------------------------------------
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles"[0m
+Started POST "/profiles" for 127.0.0.1 at 2020-11-17 04:06:12 -0800
+Processing by ProfilesController#create as HTML
+  Parameters: {"profile"=>{"bio"=>"MyText", "dob"=>"2020-11-17", "email"=>"MyStringcreate", "first_name"=>"MyString", "password"=>"[FILTERED]", "picture_url"=>"MyString", "surname"=>"MyString"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("email", "password", "first_name", "surname", "dob", "bio", "picture_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "MyStringcreate"], ["password", "MyText"], ["first_name", "MyString"], ["surname", "MyString"], ["dob", "2020-11-17"], ["bio", "MyText"], ["picture_url", "MyString"], ["created_at", "2020-11-17 12:06:12.029966"], ["updated_at", "2020-11-17 12:06:12.029966"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/profiles/980190963
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles"[0m
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+ProfilesControllerTest: test_should_destroy_profile
+---------------------------------------------------
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles"[0m
+Started DELETE "/profiles/980190962" for 127.0.0.1 at 2020-11-17 04:06:12 -0800
+Processing by ProfilesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProfile Destroy (0.2ms)[0m  [1m[31mDELETE FROM "profiles" WHERE "profiles"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/profiles
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+ProfilesControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/profiles/980190962/edit" for 127.0.0.1 at 2020-11-17 04:06:12 -0800
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering profiles/edit.html.haml within layouts/application
+  Rendered profiles/_form.html.haml (11.5ms)
+  Rendered profiles/edit.html.haml within layouts/application (12.7ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m

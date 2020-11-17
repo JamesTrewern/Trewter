@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 2020_11_17_115848) do
 
   create_table "profiles", force: :cascade do |t|
-    t.string "email"
-    t.text "password"
-    t.string "first_name"
-    t.string "surname"
+    t.string "email", null: false
+    t.text "password", null: false
+    t.string "first_name", null: false
+    t.string "surname", null: false
     t.date "dob"
     t.text "bio"
     t.string "picture_url"
