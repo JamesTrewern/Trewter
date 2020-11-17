@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Email:
+  = @profile.email
+%p
+  %b Password:
+  = @profile.password
+%p
+  %b First name:
+  = @profile.first_name
+%p
+  %b Surname:
+  = @profile.surname
+%p
+  %b Dob:
+  = @profile.dob
+%p
+  %b Bio:
+  = @profile.bio
+%p
+  %b Picture url:
+  = @profile.picture_url
+
+= link_to 'Edit', edit_profile_path(@profile)
+\|
+= link_to 'Back', profiles_path
