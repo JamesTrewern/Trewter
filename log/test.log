@@ -273,3 +273,267 @@ Processing by HomeController#request_contact as HTML
 Redirected to http://www.example.com/
 Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
   [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+HomeControllerTest: test_should_get_contact
+-------------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2020-11-17 03:53:55 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 224ms (Views: 201.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+HomeControllerTest: test_should_post_request_contact
+----------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-17 03:53:55 -0800
+Processing by HomeController#request_contact as HTML
+  Parameters: {"name"=>"Mathew", "email"=>"mathew@me.com", "telephone"=>"1235467890", "message"=>"Hello"}
+  Rendering contact_mailer/contact_email.en.html.haml within layouts/mailer
+  Rendered contact_mailer/contact_email.en.html.haml within layouts/mailer (0.9ms)
+ContactMailer#contact_email: processed outbound mail in 83.1ms
+Sent mail to info@twerterbook.com (16.1ms)
+Date: Tue, 17 Nov 2020 03:53:55 -0800
+From: info@tewerterbook.com
+To: info@twerterbook.com
+Cc: mathew@me.com
+Message-ID: <5fb3b9d3c2f18_58a52b1fcb95e5c81336@ubuntu.mail>
+Subject: Contact email
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Dear Twerter Book,</p>
+<p>Could you get in touch with me please?</p>
+<dl>
+<dt>Name:</dt>
+<dd>Mathew</dd>
+<dt>Email:</dt>
+<dd>mathew@me.com</dd>
+<dt>Telephone</dt>
+<dd>1235467890</dd>
+</dl>
+<p>Hello</p>
+<p>Thanks</p>
+<p>Mathew</p>
+
+  </body>
+</html>
+
+Redirected to http://www.example.com/
+Completed 302 Found in 104ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+HomeControllerTest: test_should_post_request_contact_but_no_email
+-----------------------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-17 03:53:55 -0800
+Processing by HomeController#request_contact as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-11-17 03:53:55 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+ContactMailerTest: test_should_return_contact_email
+---------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+HomeControllerTest: test_should_get_contact
+-------------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2020-11-17 03:54:09 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 103ms (Views: 100.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-11-17 03:54:09 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+HomeControllerTest: test_should_post_request_contact
+----------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-17 03:54:09 -0800
+Processing by HomeController#request_contact as HTML
+  Parameters: {"name"=>"Mathew", "email"=>"mathew@me.com", "telephone"=>"1235467890", "message"=>"Hello"}
+  Rendering contact_mailer/contact_email.en.html.haml within layouts/mailer
+  Rendered contact_mailer/contact_email.en.html.haml within layouts/mailer (0.9ms)
+ContactMailer#contact_email: processed outbound mail in 77.7ms
+Sent mail to info@twerterbook.com (1.9ms)
+Date: Tue, 17 Nov 2020 03:54:09 -0800
+From: info@tewerterbook.com
+To: info@twerterbook.com
+Cc: mathew@me.com
+Message-ID: <5fb3b9e1b8bf4_58bd2acbbed265b8194c5@ubuntu.mail>
+Subject: Contact email
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Dear Twerter Book,</p>
+<p>Could you get in touch with me please?</p>
+<dl>
+<dt>Name:</dt>
+<dd>Mathew</dd>
+<dt>Email:</dt>
+<dd>mathew@me.com</dd>
+<dt>Telephone</dt>
+<dd>1235467890</dd>
+</dl>
+<p>Hello</p>
+<p>Thanks</p>
+<p>Mathew</p>
+
+  </body>
+</html>
+
+Redirected to http://www.example.com/
+Completed 302 Found in 84ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+HomeControllerTest: test_should_post_request_contact_but_no_email
+-----------------------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-17 03:54:09 -0800
+Processing by HomeController#request_contact as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+ContactMailerTest: test_should_return_contact_email
+---------------------------------------------------
+  Rendering contact_mailer/contact_email.en.html.haml within layouts/mailer
+  Rendered contact_mailer/contact_email.en.html.haml within layouts/mailer (0.1ms)
+ContactMailer#contact_email: processed outbound mail in 0.6ms
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+ContactMailerTest: test_should_return_contact_email
+---------------------------------------------------
+  Rendering contact_mailer/contact_email.en.html.haml within layouts/mailer
+  Rendered contact_mailer/contact_email.en.html.haml within layouts/mailer (3.6ms)
+ContactMailer#contact_email: processed outbound mail in 9.3ms
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------
+HomeControllerTest: test_should_post_request_contact_but_no_email
+-----------------------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-17 03:54:41 -0800
+Processing by HomeController#request_contact as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+HomeControllerTest: test_should_get_contact
+-------------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2020-11-17 03:54:41 -0800
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.haml within layouts/application
+  Rendered home/contact.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 80ms (Views: 79.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+HomeControllerTest: test_should_get_home
+----------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-11-17 03:54:41 -0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.haml within layouts/application
+  Rendered home/home.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+HomeControllerTest: test_should_post_request_contact
+----------------------------------------------------
+Started POST "/request_contact" for 127.0.0.1 at 2020-11-17 03:54:41 -0800
+Processing by HomeController#request_contact as HTML
+  Parameters: {"name"=>"Mathew", "email"=>"mathew@me.com", "telephone"=>"1235467890", "message"=>"Hello"}
+  Rendering contact_mailer/contact_email.en.html.haml within layouts/mailer
+  Rendered contact_mailer/contact_email.en.html.haml within layouts/mailer (0.1ms)
+ContactMailer#contact_email: processed outbound mail in 0.7ms
+Sent mail to info@twerterbook.com (1.4ms)
+Date: Tue, 17 Nov 2020 03:54:41 -0800
+From: info@twerterbook.com
+To: info@twerterbook.com
+Cc: mathew@me.com
+Message-ID: <5fb3ba012fc5e_58da2adae6dcc5bc13053@ubuntu.mail>
+Subject: Contact email
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Dear Twerter Book,</p>
+<p>Could you get in touch with me please?</p>
+<dl>
+<dt>Name:</dt>
+<dd>Mathew</dd>
+<dt>Email:</dt>
+<dd>mathew@me.com</dd>
+<dt>Telephone</dt>
+<dd>1235467890</dd>
+</dl>
+<p>Hello</p>
+<p>Thanks</p>
+<p>Mathew</p>
+
+  </body>
+</html>
+
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
