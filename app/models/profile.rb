@@ -4,5 +4,5 @@ class Profile < ApplicationRecord
   validates :email, format: { with: /\A[\w.]+@\w+(.\w+)+\z/, message: "email must be correctly formatted" }
   validates :email, confirmation: true
   validates :email_confirmation, presence: true
-  has_many :posts
+  has_many :posts, dependent: :destroy
 end
