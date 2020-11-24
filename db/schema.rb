@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_203512) do
+ActiveRecord::Schema.define(version: 2020_11_24_203938) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "post_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_203512) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_posts_on_profile_id"
+    t.index ["title"], name: "index_posts_on_title", unique: true
   end
 
   create_table "profiles", force: :cascade do |t|

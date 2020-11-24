@@ -2,12 +2,12 @@
 
 one:
   profile: one
-  title: MyString
+  title: title1
   post_text: MyText
   image_url: MyString
 
 two:
   profile: two
-  title: MyString
+  title: title2
   post_text: MyText
   image_url: MyString
