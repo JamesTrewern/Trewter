@@ -23,6 +23,8 @@
       %p= t('app_description')
       - flash.each do |key, value|
         = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
+      %p.notice= notice
+      %p.alert= alert
       %div{'class' => 'navigationBar'}
         %div{'class' => 'navigationBarElement', 'id' => 'nav1'}
           %h2= 'CBT'
