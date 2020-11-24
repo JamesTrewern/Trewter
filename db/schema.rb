@@ -10,28 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_152405) do
+ActiveRecord::Schema.define(version: 2020_11_24_200958) do
 
   create_table "posts", force: :cascade do |t|
-    t.integer "profile_id", null: false
+    t.integer "profile_id"
     t.text "post_text"
-    t.string "image_url"
+    t.text "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_posts_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "email", null: false
-    t.text "password", null: false
     t.string "first_name", null: false
     t.string "surname", null: false
-    t.date "dob"
+    t.date "dob", null: false
     t.text "bio"
     t.string "picture_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_profiles_on_email", unique: true
   end
 
 end

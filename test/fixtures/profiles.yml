@@ -1,19 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: j@m.c
-  password: MyText
   first_name: MyString
   surname: MyString
-  dob: 2020-11-17
+  dob: 2020-11-24
   bio: MyText
   picture_url: MyString
 
 two:
-  email: g@m.c
-  password: MyText
   first_name: MyString
   surname: MyString
-  dob: 2020-11-17
+  dob: 2020-11-24
   bio: MyText
   picture_url: MyString

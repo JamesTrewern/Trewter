@@ -3,9 +3,9 @@
 one:
   profile: one
   post_text: MyText
-  image_url: MyString
+  image_url: MyText
 
 two:
   profile: two
   post_text: MyText
-  image_url: MyString
+  image_url: MyText

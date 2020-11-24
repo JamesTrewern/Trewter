@@ -16,9 +16,7 @@ class ProfilesTest < ApplicationSystemTestCase
 
     fill_in "Bio", with: @profile.bio
     fill_in "Dob", with: @profile.dob
-    fill_in "Email", with: @profile.email
     fill_in "First name", with: @profile.first_name
-    fill_in "Password", with: @profile.password
     fill_in "Picture url", with: @profile.picture_url
     fill_in "Surname", with: @profile.surname
     click_on "Create Profile"
@@ -33,9 +31,7 @@ class ProfilesTest < ApplicationSystemTestCase
 
     fill_in "Bio", with: @profile.bio
     fill_in "Dob", with: @profile.dob
-    fill_in "Email", with: @profile.email
     fill_in "First name", with: @profile.first_name
-    fill_in "Password", with: @profile.password
     fill_in "Picture url", with: @profile.picture_url
     fill_in "Surname", with: @profile.surname
     click_on "Update Profile"

@@ -25,6 +25,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+
     respond_to do |format|
       if @profile.save
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
@@ -68,6 +69,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:email, :email_confirmation, :password, :first_name, :surname, :dob, :bio, :picture_url)
+      params.require(:profile).permit(:first_name, :surname, :dob, :bio, :picture_url)
     end
 end

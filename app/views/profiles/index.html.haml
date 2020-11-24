@@ -3,8 +3,6 @@
 %table
   %thead
     %tr
-      %th Email
-      %th Password
       %th First name
       %th Surname
       %th Dob
@@ -17,8 +15,6 @@
   %tbody
     - @profiles.each do |profile|
       %tr
-        %td= profile.email
-        %td= profile.password
         %td= profile.first_name
         %td= profile.surname
         %td= profile.dob
