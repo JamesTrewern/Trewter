@@ -30,11 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  app_title: Twerter Book
+  app_title: Trewter
   app_description: A place where you and your friends can pretend to be happier than you are so everyone is jealous of you
+  profile: account settings
   home:
     home:
-      title: Twerter Book
+      title: Trewter
       welcome: Welcome to Twerter Book
 
     contact:

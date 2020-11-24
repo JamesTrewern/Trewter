@@ -13061,3 +13061,1192 @@ Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
   [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "profile_id" integer, "comment_text" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_profile_id" ON "comments" ("profile_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "profile_id" integer, "title" varchar NOT NULL, "post_text" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_profile_id" ON "posts" ("profile_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_posts_on_title" ON "posts" ("title")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar NOT NULL, "surname" varchar NOT NULL, "dob" date NOT NULL, "bio" text, "picture_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "profile_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_users_on_profile_id" ON "users" ("profile_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201124210528)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201124200359),
+(20201124203938),
+(20201124203512),
+(20201124203233);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-11-24 21:14:21.368422"], ["updated_at", "2020-11-24 21:14:21.368422"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (2.0ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.397016', '2020-11-24 21:14:21.397016', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.397016', '2020-11-24 21:14:21.397016', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.439958', '2020-11-24 21:14:21.439958', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.439958', '2020-11-24 21:14:21.439958', 298486374)[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.447995', '2020-11-24 21:14:21.447995', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.447995', '2020-11-24 21:14:21.447995', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.454380', '2020-11-24 21:14:21.454380', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.454380', '2020-11-24 21:14:21.454380', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.458402', '2020-11-24 21:14:21.458402', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.458402', '2020-11-24 21:14:21.458402', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.463462', '2020-11-24 21:14:21.463462', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.463462', '2020-11-24 21:14:21.463462', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.467692', '2020-11-24 21:14:21.467692', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.467692', '2020-11-24 21:14:21.467692', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.472018', '2020-11-24 21:14:21.472018', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.472018', '2020-11-24 21:14:21.472018', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.475998', '2020-11-24 21:14:21.475998', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.475998', '2020-11-24 21:14:21.475998', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.480217', '2020-11-24 21:14:21.480217', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.480217', '2020-11-24 21:14:21.480217', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.484434', '2020-11-24 21:14:21.484434', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.484434', '2020-11-24 21:14:21.484434', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.489730', '2020-11-24 21:14:21.489730', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.489730', '2020-11-24 21:14:21.489730', 298486374)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.494111', '2020-11-24 21:14:21.494111', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.494111', '2020-11-24 21:14:21.494111', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.498832', '2020-11-24 21:14:21.498832', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.498832', '2020-11-24 21:14:21.498832', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.503666', '2020-11-24 21:14:21.503666', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.503666', '2020-11-24 21:14:21.503666', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.511410', '2020-11-24 21:14:21.511410', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.511410', '2020-11-24 21:14:21.511410', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.516258', '2020-11-24 21:14:21.516258', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.516258', '2020-11-24 21:14:21.516258', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.521142', '2020-11-24 21:14:21.521142', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.521142', '2020-11-24 21:14:21.521142', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.526148', '2020-11-24 21:14:21.526148', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.526148', '2020-11-24 21:14:21.526148', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.530325', '2020-11-24 21:14:21.530325', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.530325', '2020-11-24 21:14:21.530325', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.534352', '2020-11-24 21:14:21.534352', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.534352', '2020-11-24 21:14:21.534352', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.538633', '2020-11-24 21:14:21.538633', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.538633', '2020-11-24 21:14:21.538633', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.542956', '2020-11-24 21:14:21.542956', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.542956', '2020-11-24 21:14:21.542956', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.546935', '2020-11-24 21:14:21.546935', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.546935', '2020-11-24 21:14:21.546935', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.551188', '2020-11-24 21:14:21.551188', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.551188', '2020-11-24 21:14:21.551188', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.555480', '2020-11-24 21:14:21.555480', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:14:21.555480', '2020-11-24 21:14:21.555480', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.903974', '2020-11-24 21:17:59.903974', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.903974', '2020-11-24 21:17:59.903974', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.938652', '2020-11-24 21:17:59.938652', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.938652', '2020-11-24 21:17:59.938652', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.942788', '2020-11-24 21:17:59.942788', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.942788', '2020-11-24 21:17:59.942788', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.946624', '2020-11-24 21:17:59.946624', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.946624', '2020-11-24 21:17:59.946624', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.950277', '2020-11-24 21:17:59.950277', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.950277', '2020-11-24 21:17:59.950277', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.953936', '2020-11-24 21:17:59.953936', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.953936', '2020-11-24 21:17:59.953936', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.957649', '2020-11-24 21:17:59.957649', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.957649', '2020-11-24 21:17:59.957649', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.961166', '2020-11-24 21:17:59.961166', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.961166', '2020-11-24 21:17:59.961166', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.965200', '2020-11-24 21:17:59.965200', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.965200', '2020-11-24 21:17:59.965200', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.968860', '2020-11-24 21:17:59.968860', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.968860', '2020-11-24 21:17:59.968860', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.972579', '2020-11-24 21:17:59.972579', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.972579', '2020-11-24 21:17:59.972579', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.976432', '2020-11-24 21:17:59.976432', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.976432', '2020-11-24 21:17:59.976432', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.980184', '2020-11-24 21:17:59.980184', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.980184', '2020-11-24 21:17:59.980184', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.983922', '2020-11-24 21:17:59.983922', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.983922', '2020-11-24 21:17:59.983922', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.987579', '2020-11-24 21:17:59.987579', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.987579', '2020-11-24 21:17:59.987579', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.991510', '2020-11-24 21:17:59.991510', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.991510', '2020-11-24 21:17:59.991510', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.995271', '2020-11-24 21:17:59.995271', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.995271', '2020-11-24 21:17:59.995271', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.999131', '2020-11-24 21:17:59.999131', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:17:59.999131', '2020-11-24 21:17:59.999131', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.002861', '2020-11-24 21:18:00.002861', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.002861', '2020-11-24 21:18:00.002861', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.006644', '2020-11-24 21:18:00.006644', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.006644', '2020-11-24 21:18:00.006644', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.010548', '2020-11-24 21:18:00.010548', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.010548', '2020-11-24 21:18:00.010548', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.014143', '2020-11-24 21:18:00.014143', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.014143', '2020-11-24 21:18:00.014143', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.017780', '2020-11-24 21:18:00.017780', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.017780', '2020-11-24 21:18:00.017780', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.021362', '2020-11-24 21:18:00.021362', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.021362', '2020-11-24 21:18:00.021362', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.025104', '2020-11-24 21:18:00.025104', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.025104', '2020-11-24 21:18:00.025104', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.028761', '2020-11-24 21:18:00.028761', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:18:00.028761', '2020-11-24 21:18:00.028761', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.853114', '2020-11-24 21:20:28.853114', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.853114', '2020-11-24 21:20:28.853114', 298486374)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.889979', '2020-11-24 21:20:28.889979', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.889979', '2020-11-24 21:20:28.889979', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.894137', '2020-11-24 21:20:28.894137', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.894137', '2020-11-24 21:20:28.894137', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.897899', '2020-11-24 21:20:28.897899', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.897899', '2020-11-24 21:20:28.897899', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.901549', '2020-11-24 21:20:28.901549', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.901549', '2020-11-24 21:20:28.901549', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.905335', '2020-11-24 21:20:28.905335', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.905335', '2020-11-24 21:20:28.905335', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.909020', '2020-11-24 21:20:28.909020', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.909020', '2020-11-24 21:20:28.909020', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.913274', '2020-11-24 21:20:28.913274', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.913274', '2020-11-24 21:20:28.913274', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.916909', '2020-11-24 21:20:28.916909', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.916909', '2020-11-24 21:20:28.916909', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.920570', '2020-11-24 21:20:28.920570', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.920570', '2020-11-24 21:20:28.920570', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.924152', '2020-11-24 21:20:28.924152', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.924152', '2020-11-24 21:20:28.924152', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.928121', '2020-11-24 21:20:28.928121', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.928121', '2020-11-24 21:20:28.928121', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.931867', '2020-11-24 21:20:28.931867', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.931867', '2020-11-24 21:20:28.931867', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.935585', '2020-11-24 21:20:28.935585', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.935585', '2020-11-24 21:20:28.935585', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.939137', '2020-11-24 21:20:28.939137', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.939137', '2020-11-24 21:20:28.939137', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.942708', '2020-11-24 21:20:28.942708', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.942708', '2020-11-24 21:20:28.942708', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.946867', '2020-11-24 21:20:28.946867', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.946867', '2020-11-24 21:20:28.946867', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.950464', '2020-11-24 21:20:28.950464', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.950464', '2020-11-24 21:20:28.950464', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.954257', '2020-11-24 21:20:28.954257', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.954257', '2020-11-24 21:20:28.954257', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.958005', '2020-11-24 21:20:28.958005', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.958005', '2020-11-24 21:20:28.958005', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.962066', '2020-11-24 21:20:28.962066', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.962066', '2020-11-24 21:20:28.962066', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.966225', '2020-11-24 21:20:28.966225', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.966225', '2020-11-24 21:20:28.966225', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.969857', '2020-11-24 21:20:28.969857', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.969857', '2020-11-24 21:20:28.969857', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.973194', '2020-11-24 21:20:28.973194', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.973194', '2020-11-24 21:20:28.973194', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.976942', '2020-11-24 21:20:28.976942', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.976942', '2020-11-24 21:20:28.976942', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.981349', '2020-11-24 21:20:28.981349', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:20:28.981349', '2020-11-24 21:20:28.981349', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.262391', '2020-11-24 21:25:24.262391', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.262391', '2020-11-24 21:25:24.262391', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.297368', '2020-11-24 21:25:24.297368', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.297368', '2020-11-24 21:25:24.297368', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.301306', '2020-11-24 21:25:24.301306', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.301306', '2020-11-24 21:25:24.301306', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.305032', '2020-11-24 21:25:24.305032', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.305032', '2020-11-24 21:25:24.305032', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.308824', '2020-11-24 21:25:24.308824', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.308824', '2020-11-24 21:25:24.308824', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.312620', '2020-11-24 21:25:24.312620', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.312620', '2020-11-24 21:25:24.312620', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.316411', '2020-11-24 21:25:24.316411', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.316411', '2020-11-24 21:25:24.316411', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.320567', '2020-11-24 21:25:24.320567', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.320567', '2020-11-24 21:25:24.320567', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.324615', '2020-11-24 21:25:24.324615', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.324615', '2020-11-24 21:25:24.324615', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.328536', '2020-11-24 21:25:24.328536', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.328536', '2020-11-24 21:25:24.328536', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.332491', '2020-11-24 21:25:24.332491', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.332491', '2020-11-24 21:25:24.332491', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.336581', '2020-11-24 21:25:24.336581', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.336581', '2020-11-24 21:25:24.336581', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.340488', '2020-11-24 21:25:24.340488', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.340488', '2020-11-24 21:25:24.340488', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.344153', '2020-11-24 21:25:24.344153', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.344153', '2020-11-24 21:25:24.344153', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.348053', '2020-11-24 21:25:24.348053', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.348053', '2020-11-24 21:25:24.348053', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.352085', '2020-11-24 21:25:24.352085', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.352085', '2020-11-24 21:25:24.352085', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.356053', '2020-11-24 21:25:24.356053', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.356053', '2020-11-24 21:25:24.356053', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.360278', '2020-11-24 21:25:24.360278', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.360278', '2020-11-24 21:25:24.360278', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.364557', '2020-11-24 21:25:24.364557', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.364557', '2020-11-24 21:25:24.364557', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.369004', '2020-11-24 21:25:24.369004', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.369004', '2020-11-24 21:25:24.369004', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.372438', '2020-11-24 21:25:24.372438', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.372438', '2020-11-24 21:25:24.372438', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.376277', '2020-11-24 21:25:24.376277', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.376277', '2020-11-24 21:25:24.376277', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.379894', '2020-11-24 21:25:24.379894', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.379894', '2020-11-24 21:25:24.379894', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.383541', '2020-11-24 21:25:24.383541', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.383541', '2020-11-24 21:25:24.383541', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.387492', '2020-11-24 21:25:24.387492', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.387492', '2020-11-24 21:25:24.387492', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "profiles"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.391421', '2020-11-24 21:25:24.391421', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2020-11-24 21:25:24.391421', '2020-11-24 21:25:24.391421', 298486374)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
