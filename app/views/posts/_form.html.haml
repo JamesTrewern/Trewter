@@ -10,10 +10,13 @@
     = f.label :profile
     = f.text_field :profile
   .field
+    = f.label :title
+    = f.text_field :title
+  .field
     = f.label :post_text
     = f.text_area :post_text
   .field
     = f.label :image_url
-    = f.text_area :image_url
+    = f.text_field :image_url
   .actions
     = f.submit 'Save'

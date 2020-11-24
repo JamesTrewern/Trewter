@@ -4,6 +4,7 @@
   %thead
     %tr
       %th Profile
+      %th Title
       %th Post text
       %th Image url
       %th
@@ -14,6 +15,7 @@
     - @posts.each do |post|
       %tr
         %td= post.profile
+        %td= post.title
         %td= post.post_text
         %td= post.image_url
         %td= link_to 'Show', post

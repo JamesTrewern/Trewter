@@ -17,6 +17,7 @@ class PostsTest < ApplicationSystemTestCase
     fill_in "Image url", with: @post.image_url
     fill_in "Post text", with: @post.post_text
     fill_in "Profile", with: @post.profile_id
+    fill_in "Title", with: @post.title
     click_on "Create Post"
 
     assert_text "Post was successfully created"
@@ -30,6 +31,7 @@ class PostsTest < ApplicationSystemTestCase
     fill_in "Image url", with: @post.image_url
     fill_in "Post text", with: @post.post_text
     fill_in "Profile", with: @post.profile_id
+    fill_in "Title", with: @post.title
     click_on "Update Post"
 
     assert_text "Post was successfully updated"
