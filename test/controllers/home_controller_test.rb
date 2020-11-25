@@ -1,11 +1,12 @@
 require 'test_helper'
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   test "should get home" do
     get root_url
     assert_response :success
-    assert_select 'title', 'Twerter Book'
-    assert_select 'p', 'Twerter Book'
+    assert_select 'title', 'Trewter'
+    assert_select 'p', 'Trewter'
   end
 
   test "should get contact" do
@@ -14,7 +15,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
 
     assert_template layout: 'application'
 
-    assert_select 'title', 'Twerter Book'
+    assert_select 'title', 'Trewter'
     assert_select 'h1', 'Contact us'
     assert_select 'p', 'Complete form pls'
   end

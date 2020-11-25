@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
+    @user = users(:one)
+    sign_in @user
     @post = posts(:one)
   end
 
@@ -17,7 +20,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create post" do
     assert_difference('Post.count') do
-      post posts_url, params: { post: { image_url: @post.image_url, post_text: @post.post_text, profile_id: @post.profile_id, title: @post.title + 'create'} }
+      post posts_url, params: { post: { image_url: @post.image_url, post_text: @post.post_text, title: @post.title + 'create'} }
     end
 
     assert_redirected_to post_url(Post.last)
@@ -34,7 +37,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update post" do
-    patch post_url(@post), params: { post: { image_url: @post.image_url, post_text: @post.post_text, profile_id: @post.profile_id, title: @post.title } }
+    patch post_url(@post), params: { post: { image_url: @post.image_url, post_text: @post.post_text, title: @post.title } }
     assert_redirected_to post_url(@post)
   end
 
