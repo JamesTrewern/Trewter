@@ -2,7 +2,8 @@
 
 %p
   %b Profile:
-  = @post.profile
+  = @post.profile.first_name
+  = @post.profile.surname
 %p
   %b Title:
   = @post.title
