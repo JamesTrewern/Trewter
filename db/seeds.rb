@@ -28,7 +28,7 @@
     end
 
     post2 = Post.where(title: 'second example post').first
-    unless post1
-      post1 = Post.new({title: 'second example post', post_text: "example post text again", profile: profile})
-      post1.save
+    unless post2
+      post2 = Post.new({title: 'second example post', post_text: "example post text again", profile: profile})
+      post2.save
     end
