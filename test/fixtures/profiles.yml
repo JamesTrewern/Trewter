@@ -4,7 +4,7 @@ one:
   user: one
   first_name: MyString
   surname: MyString
-  dob: 2020-11-24
+  dob: 1999-11-24
   bio: MyText
   picture_url: MyString
 
@@ -12,6 +12,6 @@ two:
   user: two
   first_name: MyString
   surname: MyString
-  dob: 2020-11-24
+  dob: 1999-11-24
   bio: MyText
   picture_url: MyString

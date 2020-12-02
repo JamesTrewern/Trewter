@@ -1,7 +1,35 @@
 require 'test_helper'
 
 class ProfileTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @user = User.new({email: 'james@example.com', password: '123abcd'})
+    @user.save
+  end
+
+
+  test "should save valid profile" do
+    profile = Profile.new({first_name: 'James', surname: 'Trewern', dob: Date::strptime("10-12-1999", "%d-%m-%Y"), user: @user})
+    profile.save
+    assert profile.valid?
+  end
+
+  test "should not save empty profile" do
+    profile = Profile.new
+    profile.save
+    refute profile.valid?
+  end
+
+  test "should not save profiles with same user" do
+    profile1 = Profile.new({first_name: 'James', surname: 'Trewern', dob: Date::strptime("10-12-1999", "%d-%m-%Y"), user: @user})
+    profile1.save
+    profile2 = Profile.new({first_name: 'Jack', surname: 'Trewern', dob: Date::strptime("11-12-1999", "%d-%m-%Y"), user: @user})
+    profile2.save
+    refute profile2.valid?
+  end
+
+  test "should get profile from user" do
+    user = users(:one)
+    profile = profiles(:one)
+    assert user.profile == profile
+  end
 end

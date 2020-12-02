@@ -3,7 +3,8 @@ require 'test_helper'
 class ProfilesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
   setup do
-    @user = users(:one)
+    @user = User.new({email: 'james@example.com', password: '123abcd'})
+    @user.save
     sign_in @user
     @profile = profiles(:one)
   end
