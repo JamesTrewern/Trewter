@@ -36,9 +36,9 @@
       profile1.save
     end
 
-    follow1 = Follow.where(followed: profile1).where(follower: profile2)
+    follow1 = Follow.where(follower: profile2).where(followed: profile1).first
     unless follow1
-      follow1 = Follow.new({follwed: profile1, follwer: profile2})
+      follow1 = Follow.new({followed: profile1, follower: profile2})
       follow1.save
     end
 
