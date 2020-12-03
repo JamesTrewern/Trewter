@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'rails-controller-testing'
 gem 'devise'
-
+gem 'date_validator'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

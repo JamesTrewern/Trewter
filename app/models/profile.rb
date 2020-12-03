@@ -1,26 +1,20 @@
-class UserIsOlderThan16 < ActiveModel::Validator
-  def validate(record)
-    yearsAgo16 = DateTime.now - 16.years
-    if record.dob
-      if record.dob > DateTime.now - 16.years
-        record.errors[:dob] << 'age must be greater than 16'
-      end
-    end
-  end
-end
-
 class Profile < ApplicationRecord
-
   validates :user, uniqueness: true
-  validates_with UserIsOlderThan16
+  validates :dob, date: {before: Proc.new {Time.now - 16.year}}
+  validates :first_name, :surname, length: {minimum: 2, maximum: 20}
+  validates :first_name, :surname, format: {with: /\A([A-Z][a-z\-]+)+\z/}
+  validates :bio, length: {maximum: 300}
 
   has_many :posts, dependent: :destroy
+  validates_associated :posts
   has_many :comments, dependent: :destroy
+  validates_associated :comments
   belongs_to :user
 
-  has_many :followers, foreign_key: :follower_id , class_name: "Follow"
-  has_many :followed, through: :followers
-  has_many :followed, foreign_key: :followed_id, class_name: "Follow"
-  has_many :followers, through: :followed
+
+  has_many :followersR, foreign_key: :follower_id , class_name: "Follow"
+  has_many :followed, through: :followersR, class_name: "Profile"
+  has_many :followedR, foreign_key: :followed_id, class_name: "Follow"
+  has_many :followers, through: :followedR, class_name: "Profile"
 
 end

@@ -30,6 +30,41 @@ class ProfileTest < ActiveSupport::TestCase
   test "should get profile from user" do
     user = users(:one)
     profile = profiles(:one)
-    assert user.profile == profile
+    assert user.profile == profiles(:one)
   end
+
+  test "should return followed" do
+    assert profiles(:one).followed.include? profiles(:two)
+  end
+
+  test "should not return not followed" do
+    profile1 = Profile.new({first_name: 'James', surname: 'Trewern', dob: Date::strptime("10-12-1999", "%d-%m-%Y"), user: @user})
+    profile1.save
+    refute profiles(:one).followed.include? profile1
+  end
+
+  test "should not save invalid name format" do
+    profile = Profile.new({first_name: '1233', surname: '3333', dob: Date::strptime("10-12-1999", "%d-%m-%Y"), user: @user})
+    profile.save
+    refute profile.valid?
+  end
+
+  test "should not save short name" do
+    profile = Profile.new({first_name: 'A', surname: 'Aaaaa', dob: Date::strptime("10-12-1999", "%d-%m-%Y"), user: @user})
+    profile.save
+    refute profile.valid?
+  end
+
+  test "should not save long name" do
+    profile = Profile.new({first_name: 'Aaaaaaaaaaaaaaaaaaaaa', surname: 'Aaaaa', dob: Date::strptime("10-12-1999", "%d-%m-%Y"), user: @user})
+    profile.save
+    refute profile.valid?
+  end
+
+  test "should not save long bio" do
+    profile = Profile.new({first_name: 'Aaaaaaaaaaaaaaaaaaaaa', surname: 'Aaaaa', dob: Date::strptime("10-12-1999", "%d-%m-%Y"), user: @user})
+    profile.save
+    refute profile.valid?
+  end
+
 end
