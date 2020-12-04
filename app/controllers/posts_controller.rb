@@ -4,12 +4,14 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.followed(current_user)
+    @posts = @posts + current_user.profile.posts
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    
   end
 
   # GET /posts/new

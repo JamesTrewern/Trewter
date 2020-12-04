@@ -1,18 +1,38 @@
 %p#notice= notice
-
-%p
-  %b Profile:
-  = @post.profile.first_name
-  = @post.profile.surname
-%p
-  %b Title:
-  = @post.title
-%p
-  %b Post text:
-  = @post.post_text
-%p
-  %b Image url:
-  = @post.image_url
+%div.container
+  %div.row
+    %div.col-auto
+      -if @post.profile.picture_url
+        = image_tag(@post.profile.picture_url)
+      -else
+        = image_tag('defaultProfile.png')
+    %div.col
+      = @post.profile.first_name
+      = @post.profile.surname
+  %div.row
+    %h
+      = @post.title
+  %div.row
+    %p
+      = @post.post_text
+    -if @post.image_url
+      %image{'source' => @post.image_url}
+  -@post.comments.each do |comment|
+    %div.row{'id' => 'comment' + comment.id.to_s}
+      %div.col-auto
+        -if comment.profile.picture_url
+          %image{'source' => @post.profile.image_url}
+        -else
+          = image_tag('defaultProfile.png')
+      %div.col
+        %div.container
+          %div.row
+            = comment.profile.first_name
+            = comment.profile.surname
+          %div.row
+            = comment.comment_text
+  %div.row
+    = button_to 'add comment', comments_path("comment" => {profile_id: current_user.profile, post_id: @post, comment_text: "test"}), remote: true;
 
 = link_to 'Edit', edit_post_path(@post)
 \|

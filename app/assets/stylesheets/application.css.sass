@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
+
+@import "bootstrap"
 
 $font: 'Times New Romanm','Times',serif;
 $eggShell: #ede5a8;
@@ -24,20 +24,19 @@ $lavender: #e3d1ff;
 
 
 
-div.pageHeading{
-  height: 200px;
-  border-style: solid;
-  border-color: $lavender;
-  background-color: $babyPink;
-  height: 40%
-}
+div.pageHeading
+      height: 200px;
+      border-style: solid;
+      border-color: $lavender;
+      background-color: $babyPink;
+      height: 40%
 
-body{
+body
   font-family: $font;
   background-color: $babyBlue;
-}
 
-div.navigationBar{
+
+div.navigationBar
   display: grid;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto;
@@ -45,16 +44,15 @@ div.navigationBar{
   border-color: $lavender;
   background-color: $babyBlue;
   height: 50%;
-}
 
-div.navigationBarElement{
+
+div.navigationBarElement
   height: auto;
   width: 30%;
   border-style: solid;
   border-color: $lavender;
   background-color: $babyBlue;
-}
 
-p.navBarDescription{
+
+p.navBarDescription
   font-size: 15px;
-}

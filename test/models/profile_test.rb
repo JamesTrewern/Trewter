@@ -63,6 +63,7 @@ class ProfileTest < ActiveSupport::TestCase
 
   test "should not save long bio" do
     profile = Profile.new({first_name: 'Aaaaaaaaaaaaaaaaaaaaa', surname: 'Aaaaa', dob: Date::strptime("10-12-1999", "%d-%m-%Y"), user: @user})
+    profile.bio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse maximus velit eu mauris ullamcorper iaculis ac tristique purus. Duis sagittis fringilla nisi, quis tempor metus cursus sed. Suspendisse faucibus varius nibh, vel accumsan mi dapibus in. In pharetra augue leo, ac luctus sapien porttitor ac. Integer erat massa, dapibus quis. "
     profile.save
     refute profile.valid?
   end
