@@ -1,0 +1,16 @@
+I"+(function() {
+  this.commentTextEdit = function(textField) {
+    if (textField.value === '') {
+      $("#btnCommentAdd").hide();
+    } else {
+      $("#btnCommentAdd").show();
+    }
+  };
+
+  $(document).ready(function() {
+    $('#btnCommentAdd').hide();
+    console.log("gay");
+  });
+
+}).call(this);
+:ET

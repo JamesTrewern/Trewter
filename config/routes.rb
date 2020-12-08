@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   resources :follows
   devise_for :users
-  resources :comments
   resources :posts
+  resources :comments, constraints: {onlyajax: true}, except: [:show, :new, :edit, :index]
   resources :profiles
   get 'contact', to: 'home#contact'
   post 'request_contact', to: 'home#request_contact'

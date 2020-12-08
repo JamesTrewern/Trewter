@@ -1,31 +1,11 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
-
-  # GET /comments
-  # GET /comments.json
-  def index
-    @comments = Comment.all
-  end
-
-  # GET /comments/1
-  # GET /comments/1.json
-  def show
-  end
-
-  # GET /comments/new
-  def new
-    @comment = Comment.new
-  end
-
-  # GET /comments/1/edit
-  def edit
-  end
+  before_action :set_comment, only: [:update, :destroy]
 
   # POST /comments
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
-
+    @comment.profile = current_user.profile
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
@@ -59,6 +39,7 @@ class CommentsController < ApplicationController
     @comment.destroy
     respond_to do |format|
       format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.js   { flash[:notice] = 'comment destroyed'}
       format.json { head :no_content }
     end
   end

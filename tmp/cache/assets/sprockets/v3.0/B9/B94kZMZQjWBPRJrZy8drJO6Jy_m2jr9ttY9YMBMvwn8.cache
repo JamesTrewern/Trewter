@@ -1,0 +1,11 @@
+I"¯(function() {
+  var commentTextEdit;
+
+  commentTextEdit = function(textField) {
+    if ($('commentTextField').val() === '') {
+      textField.hide;
+    }
+  };
+
+}).call(this);
+:ET

@@ -32,7 +32,7 @@
 en:
   app_title: Trewter
   app_description: A place where you and your friends can pretend to be happier than you are so everyone is jealous of you
-  profile: account settings
+  account_settings: account settings
   home:
     home:
       title: Trewter

@@ -1,0 +1,13 @@
+I"¼(function() {
+  var commentTextEdit;
+
+  commentTextEdit = function(textField) {
+    return console.log("gay");
+  };
+
+  return;
+
+  window.commentTextEdit = commentTextEdit;
+
+}).call(this);
+:ET

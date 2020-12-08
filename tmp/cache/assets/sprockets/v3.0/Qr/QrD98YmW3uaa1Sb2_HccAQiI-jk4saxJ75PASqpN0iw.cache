@@ -1,0 +1,11 @@
+I"(function() {
+  this.commentTextEdit = function(textField, x) {
+    if (textField.value === '') {
+      $("[id = 'btnCommentAdd'][post_id =" + x + " ]").hide();
+    } else {
+      $("[id = 'btnCommentAdd'][post_id =" + x + " ]").show();
+    }
+  };
+
+}).call(this);
+:ET

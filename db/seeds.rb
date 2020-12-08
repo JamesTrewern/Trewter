@@ -53,3 +53,12 @@
       post2 = Post.new({title: 'second example post', post_text: "example post text again", profile: profile2})
       post2.save
     end
+
+    comment1_1 = Comment.where(post: post1).where(comment_text: 'test comment 1').where(profile: profile2)
+    unless comment1_1
+      comment1_1 = Comment.new({post: post1, comment_text: 'test comment 1', profile: profile2})
+
+      comment1_1.save
+
+      puts comment1_1.id
+    end

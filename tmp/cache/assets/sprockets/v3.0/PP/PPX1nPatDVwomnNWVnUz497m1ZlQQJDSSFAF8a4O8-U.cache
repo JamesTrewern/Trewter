@@ -1,0 +1,11 @@
+I"Ë(function() {
+  this.commentTextEdit = function(textField) {
+    if (textField.value === '') {
+      $("#btnCommentAdd").hide();
+    } else {
+      $("#btnCommentAdd").show();
+    }
+  };
+
+}).call(this);
+:ET

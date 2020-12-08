@@ -1,0 +1,15 @@
+I"(function() {
+  this.commentTextEdit = function(textField) {
+    if (textField.value === '') {
+      $("#btnCommentAdd").hide();
+    } else {
+      $("#btnCommentAdd").show();
+    }
+  };
+
+  this.hideOnLoad = function(thisElement) {
+    thisElement.hide;
+  };
+
+}).call(this);
+:ET

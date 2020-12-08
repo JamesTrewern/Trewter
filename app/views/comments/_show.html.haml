@@ -1,0 +1,16 @@
+%div.row{'id' => 'comment' + comment.id.to_s}
+  %div.col-auto
+    -if comment.profile.picture_url
+      %image{'source' => @post.profile.image_url}
+    -else
+      = image_tag('defaultProfile.png')
+  %div.col
+    %div.container
+      %div.row
+        = comment.profile.first_name
+        = comment.profile.surname
+      %div.row
+        = comment.comment_text
+  -if comment.profile == current_user.profile
+    %div.col
+      =link_to 'Destroy', comment, method: :delete, remote: true, data: { confirm: 'Are you sure?' }

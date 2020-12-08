@@ -1,0 +1,37 @@
+%p#notice= notice
+%div.container{'id' => "postContainer#{post.id}"}
+  %div.row
+    %div.col-auto
+      -if post.profile.picture_url
+        = image_tag(post.profile.picture_url)
+      -else
+        = image_tag('defaultProfile.png')
+    %div.col-auto
+      = post.profile.first_name
+      = post.profile.surname
+    %div.col-auto
+      -if current_user.profile == post.profile
+        = link_to 'Edit', edit_post_path(post)
+        -if comment_depth > 0
+          = link_to 'Delete', post, method: :delete, remote: true, data: { confirm: 'Are you sure?' }
+        -else
+          = link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }
+  %div.row
+    %h
+      = post.title
+  %div.row
+    %p
+      = post.post_text
+    -if post.image_url
+      %image{'source' => post.image_url}
+  -if comment_depth > 0
+    -x = 0
+    -post.comments.each do |comment|
+      = render 'comments/show', comment: comment
+      -x += 1
+      -break if x == comment_depth
+  -else
+    -post.comments.each do |comment|
+      = render 'comments/show', comment: comment
+  %div.row{'id' => "addCommentRow"}
+    = render 'comments/form', comment: Comment.new,  post: post

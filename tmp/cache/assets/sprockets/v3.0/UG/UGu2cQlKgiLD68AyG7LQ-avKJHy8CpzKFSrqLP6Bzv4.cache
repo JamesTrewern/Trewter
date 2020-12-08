@@ -1,0 +1,12 @@
+I"å(function() {
+  this.commentTextEdit = function(textField) {
+    if (textField.value === '') {
+      $("#btnCommentAdd").hide();
+      console.log("gay");
+    } else {
+      $("#btnCommentAdd").show();
+    }
+  };
+
+}).call(this);
+:ET

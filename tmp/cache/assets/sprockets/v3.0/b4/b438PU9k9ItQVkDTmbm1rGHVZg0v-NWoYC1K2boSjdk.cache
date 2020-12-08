@@ -1,0 +1,9 @@
+I"œ(function() {
+  this.commentTextEdit = function(textField) {
+    if ($('commentTextField').val() === '') {
+      textField.hide;
+    }
+  };
+
+}).call(this);
+:ET

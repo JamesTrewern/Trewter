@@ -13,16 +13,7 @@
 
   %tbody
     - @posts.each do |post|
-      %tr
-        %td
-          = post.profile.first_name
-          = post.profile.surname
-        %td= post.title
-        %td= post.post_text
-        %td= post.image_url
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+      =render 'posts/showPost', post: post, comment_depth: 3
 
 %br
 
