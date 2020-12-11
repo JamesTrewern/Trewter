@@ -1,20 +1,38 @@
-%div{'class' => 'pageHeading'}
-  %h1= t('app_title')
-  %p= t('app_description')
+%div.container-fluid.bg-primary
+  %nav.navbar.navbar-expand-lg.navbar-light.bg-primary
+    %a.navbar-brand{:href => root_path}
+      %p.navTitle
+        = t('app_title')
+    #navbarSupportedContent.collapse.navbar-collapse
+      %ul.navbar-nav.mr-auto
+        %li.nav-item.active
+          %a.nav-link.text-white{:href => posts_path}
+            = t('posts')
+        %li.nav-item
+          %a.nav-link.text-white{:href => profiles_path}
+            =t('profiles')
+        %li.nav-item
+          -if user_signed_in?
+            %li.nav-item
+              %a.nav-link.text-white{:href => profile_path(current_user.profile)}
+                = current_user.profile.first_name
+                = current_user.profile.surname
+            %li.nav-item
+              %a.nav-link.text-white{:href => edit_user_registration_path}
+                = t('account_settings')
+            %li.nav-item
+              %a.nav-link.text-white{:href => destroy_user_session_path, 'data-method' => 'delete'}
+                = t('logout')
+          -else
+            %li.nav-item
+              %a.nav-link.text-white{:href => new_user_session_path}
+                = t('login')
+            %li.nav-item
+              %a.nav-link.text-white{:href => new_user_registration_path}
+                = t('sign_up')
+      %form.form-inline.my-2.my-lg-0
+        %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+        %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+  %p.app_description= t('app_description')
   - flash.each do |key, value|
     = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
-  %nav
-    - if user_signed_in?
-      =link_to "#{current_user.profile.first_name} #{current_user.profile.surname}", current_user.profile
-      = "|"
-      = link_to t('account_settings'), edit_user_registration_path
-      = '|'
-      = link_to t('logout'), destroy_user_session_path, method: 'delete'
-    -else
-      = link_to t('login'), new_user_session_path
-      = '|'
-      = link_to t('sign_up'), new_user_registration_path
-  %div{'class' => 'navigationBar'}
-    %div{'class' => 'navigationBarElement', 'id' => 'nav1'}
-    %div{'class' => 'navigationBarElement', 'id' => 'nav2'}
-    %div{'class' => 'navigationBarElement', 'id' => 'nav3'}
