@@ -10,12 +10,13 @@
       = post.profile.first_name
       = post.profile.surname
     %div.col-auto
-      -if current_user.profile == post.profile
-        = link_to 'Edit', edit_post_path(post)
-        -if comment_depth > 0
-          = link_to 'Delete', post, method: :delete, remote: true, data: { confirm: 'Are you sure?' }
-        -else
-          = link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }
+      %div.btn-group{'role' => 'group'}
+        -if current_user.profile == post.profile
+          = button_to 'Edit', edit_post_path(post), class: "btn btn-secondary"
+          -if comment_depth > 0
+            = button_to 'Delete', post, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
+          -else
+            = button_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
   %div.row
     %h
       = post.title

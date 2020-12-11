@@ -22,13 +22,21 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Post.count') do
       post posts_url, params: { post: { image_url: @post.image_url, post_text: @post.post_text, title: @post.title + 'create'} }
     end
-
     assert_redirected_to post_url(Post.last)
   end
 
   test "should show post" do
     get post_url(@post)
     assert_response :success
+    assert_select 'div#postContainer' + @post.id.to_s do
+      assert_select 'div.row div.col-auto', @post.profile.first_name + "\n" + @post.profile.surname
+      assert_select 'div.row div.col-auto a[href=?]', "/posts/" + @post.id.to_s + "/edit"
+      assert_select 'div.row h',@post.title
+      assert_select 'div.row p',@post.post_text
+      @post.comments.each do |comment|
+        assert_select 'div.row#comment' + comment.id.to_s
+      end
+    end
   end
 
   test "should get edit" do

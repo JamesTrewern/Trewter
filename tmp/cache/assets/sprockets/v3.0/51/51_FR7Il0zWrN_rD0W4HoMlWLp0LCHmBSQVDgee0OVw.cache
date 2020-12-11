@@ -1,0 +1,10 @@
+I"ù(function() {
+  this.commentTextEdit = function(button, commentID) {
+    var text;
+    alert(button);
+    text = $("#commentText" + commentID).html();
+    $("#commentText" + commentID).html("<textarea>" + text + "</textarea>");
+  };
+
+}).call(this);
+:ET

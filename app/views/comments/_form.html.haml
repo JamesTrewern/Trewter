@@ -9,6 +9,6 @@
   .field
     = f.hidden_field :post_id, value: post.id
   .field
-    = f.text_area :comment_text, id: "commentTextField", oninput: "commentTextEdit(this,#{post.id})"
+    = f.text_area :comment_text, id: "commentTextField", oninput: "commentTextFieldChange(this,#{post.id})"
   .actions
     = f.submit 'Add Comment', class: "btn btn-primary", id: "btnCommentAdd", post_id: post.id

@@ -1,0 +1,14 @@
+I"Ë(function() {
+  this.commentEdit = function(button, id) {
+    var text;
+    button.hidden = true;
+    text = $("#commentText" + id).html();
+    $("#commentText" + id).html("<textarea oninput=\"commentTextEdit(this," + id + ")\">" + text + "</textarea>");
+  };
+
+  this.commentTextEdit = function(textField, id) {
+    console.log($("input[class='btn btn-secondary'][id='comment" + id).parent().find("input[name='comment[comment_text]']"));
+  };
+
+}).call(this);
+:ET

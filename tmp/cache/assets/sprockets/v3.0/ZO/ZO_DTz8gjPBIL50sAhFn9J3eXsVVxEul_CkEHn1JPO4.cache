@@ -1,0 +1,10 @@
+I"(function() {
+  this.commentEdit = function(button, commentID) {
+    var text;
+    button.hidden = true;
+    text = $("#commentText" + commentID).html();
+    $("#commentText" + commentID).html("<textarea onedit=\"commentTextEdit()\">" + text + "</textarea>");
+  };
+
+}).call(this);
+:ET

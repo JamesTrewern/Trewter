@@ -1,0 +1,7 @@
+I"Š(function() {
+  this.commentTextEdit = function(commentID) {
+    return alert($("#commentText" + commentID).html());
+  };
+
+}).call(this);
+:ET

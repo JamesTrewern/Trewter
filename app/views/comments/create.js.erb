@@ -1,5 +1,5 @@
-$("#pageContainer").append("<%= escape_javascript(render partial: 'comments/show', locals: { comment: @comment } ) %>");
+$("#postContainer<%=@comment.post.id%>").append("<%= escape_javascript(render partial: 'comments/show', locals: { comment: @comment } ) %>");
 addComment = $("#addCommentRow")
-$("#addCommentRow").remove()
-$("#pageContainer").append(addComment)
-$("#commentTextField").val("")
+$("#postContainer<%=@comment.post.id%>").find("#addCommentRow").remove()
+$("#postContainer<%=@comment.post.id%>").append(addComment)
+$("#postContainer<%=@comment.post.id%>").find("#commentTextField").val("")

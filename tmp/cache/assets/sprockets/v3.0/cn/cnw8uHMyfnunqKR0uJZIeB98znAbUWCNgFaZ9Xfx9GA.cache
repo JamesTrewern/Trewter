@@ -1,0 +1,15 @@
+I"(function() {
+  this.commentEdit = function(button, id) {
+    var text;
+    button.hidden = true;
+    $(button).parent().find("#commentUpdate");
+    text = $("#commentText" + id).html();
+    $("#commentText" + id).html("<textarea oninput=\"commentTextEdit(this," + id + ")\">" + text + "</textarea>");
+  };
+
+  this.commentTextEdit = function(textField, id) {
+    $("input[class='btn btn-secondary'][id='commentUpdate'][commentID=" + id + "]").parent().find("input[name='comment[comment_text]']").val(textField.value);
+  };
+
+}).call(this);
+:ET

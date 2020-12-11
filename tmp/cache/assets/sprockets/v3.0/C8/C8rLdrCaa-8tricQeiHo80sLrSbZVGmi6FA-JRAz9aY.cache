@@ -1,0 +1,14 @@
+I"“(function() {
+  this.commentEdit = function(button, id) {
+    var text;
+    button.hidden = true;
+    text = $("#commentText" + id).html();
+    $("#commentText" + id).html("<textarea onedit=\"commentTextEdit(this" + id + ")\">" + text + "</textarea>");
+  };
+
+  this.commentTextEdit = function(textField, id) {
+    return console.log($("input.btn btn-primary#comment" + id).html());
+  };
+
+}).call(this);
+:ET

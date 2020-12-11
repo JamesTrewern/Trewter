@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-@commentTextEdit = (textField,x) ->
+@commentTextFieldChange = (textField,x) ->
   if textField.value == ''
     $("[id = 'btnCommentAdd'][post_id =" + x + " ]").hide()
   else
