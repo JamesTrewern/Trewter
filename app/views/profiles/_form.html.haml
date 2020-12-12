@@ -1,25 +1,32 @@
-= form_for @profile do |f|
-  - if @profile.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@profile.errors.count, "error")} prohibited this profile from being saved:"
-      %ul
-        - @profile.errors.full_messages.each do |message|
-          %li= message
-
-  .field
-    = f.label :first_name
-    = f.text_field :first_name
-  .field
-    = f.label :surname
-    = f.text_field :surname
-  .field
-    = f.label :dob
-    = f.date_select :dob
-  .field
-    = f.label :bio
-    = f.text_area :bio
-  .field
-    = f.label :picture_url
-    = f.text_field :picture_url
-  .actions
-    = f.submit 'Save'
+%div.container
+  = form_for @profile do |f|
+    - if @profile.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@profile.errors.count, "error")} prohibited this profile from being saved:"
+        %ul
+          - @profile.errors.full_messages.each do |message|
+            %li= message
+    %div.row.justify-content-center
+      %div.col-auto
+        = f.label :Name
+      %div.col-auto
+        .field
+          = f.text_field :first_name
+      %div.col-auto
+        .field
+          = f.text_field :surname
+    %div.row.justify-content-center
+      %div.col-auto
+        .field
+          = f.label :dob
+          = f.date_select :dob, :start_year=>1940
+    %div.row.justify-content-center
+      %div.col-auto
+        .field
+          = f.label :bio
+          = f.text_area :bio
+    %div.row.justify-content-center
+      %div.col-auto
+        .actions
+          = f.submit 'Save', class: "btn btn-secondary"
+      

@@ -2,7 +2,7 @@ class Profile < ApplicationRecord
   validates :user, uniqueness: true
   validates :dob, date: {before: Proc.new {Time.now - 16.year}}
   validates :first_name, :surname, length: {minimum: 2, maximum: 20}
-  validates :first_name, :surname, format: {with: /\A([A-Z][a-z\-]+)+\z/}
+  validates :first_name, :surname, format: {with: /\A([A-Z][a-z\-]+)+\z/, message: "must start with capital"}
   validates :bio, length: {maximum: 300}
 
   has_many :posts, dependent: :destroy

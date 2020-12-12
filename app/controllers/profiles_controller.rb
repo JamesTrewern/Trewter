@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
+  include ApplicationHelper
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_profile, except: [:new, :create]
   # GET /profiles
   # GET /profiles.json
   def index
@@ -14,7 +15,12 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    @profile = Profile.new
+    if current_user.profile
+      redirect_to edit_profile_path(current_user.profile)
+    else
+      @profile = Profile.new
+      @profile.user = current_user
+    end
   end
 
   # GET /profiles/1/edit

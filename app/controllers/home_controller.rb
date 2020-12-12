@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
+  include ApplicationHelper
+  before_action :authenticate_profile
+  #before_action User.authenticate_profile()
   def home
   end
 

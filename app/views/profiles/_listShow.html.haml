@@ -10,7 +10,9 @@
 
   %div.col-auto
     -if current_user.profile == profile
-      = button_to 'Edit Profile', edit_profile_path(profile) , method: :get, class: "btn btn-secondary"
+      %div.btn-group
+        = button_to 'Edit Profile', edit_profile_path(profile) , method: :get, class: "btn btn-secondary"
+        = button_to 'Delete', profile, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
     -else
       -if current_user.profile.followed.include?(profile)
         -follow = Follow.find_by(follower_id: current_user.profile.id, followed_id: profile.id)

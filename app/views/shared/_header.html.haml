@@ -11,25 +11,25 @@
         %li.nav-item
           %a.nav-link.text-white{:href => profiles_path}
             =t('profilesNav')
-        %li.nav-item
-          -if user_signed_in?
+        -if user_signed_in?
+          -unless current_user.profile
             %li.nav-item
               %a.nav-link.text-white{:href => profile_path(current_user.profile)}
                 = current_user.profile.first_name
                 = current_user.profile.surname
-            %li.nav-item
-              %a.nav-link.text-white{:href => edit_user_registration_path}
-                = t('account_settings')
-            %li.nav-item
-              %a.nav-link.text-white{:href => destroy_user_session_path, 'data-method' => 'delete'}
-                = t('logout')
-          -else
-            %li.nav-item
-              %a.nav-link.text-white{:href => new_user_session_path}
-                = t('login')
-            %li.nav-item
-              %a.nav-link.text-white{:href => new_user_registration_path}
-                = t('sign_up')
+          %li.nav-item
+            %a.nav-link.text-white{:href => edit_user_registration_path}
+              = t('account_settings')
+          %li.nav-item
+            %a.nav-link.text-white{:href => destroy_user_session_path, 'data-method' => 'delete'}
+              = t('logout')
+        -else
+          %li.nav-item
+            %a.nav-link.text-white{:href => new_user_session_path}
+              = t('login')
+          %li.nav-item
+            %a.nav-link.text-white{:href => new_user_registration_path}
+              = t('sign_up')
       %form.form-inline.my-2.my-lg-0
         %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
         %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
