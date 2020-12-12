@@ -16,25 +16,34 @@
 @import "bootstrap";
 
 $font: 'Times New Romanm','Times',serif;
-$eggShell: #ede5a8;
 $babyPink: #ffa3c5;
-$babyBlue: #99c3ff;
-$lavender: #e3d1ff;
+$primBlue: #4287f5;
 $margin: 20px;
 
-
-div.pageHeading{
-  height: 200px;
-  border-style: solid;
-  border-color: $lavender;
-  background-color: $babyPink;
-  height: 40%
+div {
+  &.col-auto, &.col {
+    border: 2px;
+    border-style: solid;
+    border-color: $primBlue;
+  }
+  &.row{
+    border: 3px;
+    border-style: solid;
+    border-color: $primBlue;
+    border-radius: 10px;
+  }
+  &.container-fluid, &.container{
+    border: 4px;
+    border-style: solid;
+    border-color: $babyPink;
+    border-radius: 15px;
+  }
 }
 
 
 body{
   font-family: $font;
-  background-color: $babyBlue;
+  background-color: white;
 }
 
 p.navTitle{
