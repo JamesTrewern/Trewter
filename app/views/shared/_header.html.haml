@@ -7,10 +7,10 @@
       %ul.navbar-nav.mr-auto
         %li.nav-item.active
           %a.nav-link.text-white{:href => posts_path}
-            = t('posts')
+            = t('postsNav')
         %li.nav-item
           %a.nav-link.text-white{:href => profiles_path}
-            =t('profiles')
+            =t('profilesNav')
         %li.nav-item
           -if user_signed_in?
             %li.nav-item

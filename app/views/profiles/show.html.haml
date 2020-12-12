@@ -1,21 +1,18 @@
-%p#notice= notice
+%div.container
+  =render 'listShow', profile: @profile
+  %div.row
+    %div.col
+      %h1
+        =t('.bio')
+      %p
+        =@profile.bio
 
-%p
-  %b First name:
-  = @profile.first_name
-%p
-  %b Surname:
-  = @profile.surname
-%p
-  %b Dob:
-  = @profile.dob
-%p
-  %b Bio:
-  = @profile.bio
-%p
-  %b Picture url:
-  = @profile.picture_url
 
-= link_to 'Edit', edit_profile_path(@profile)
-\|
-= link_to 'Back', profiles_path
+%div.container
+  %div.row
+    %div.col
+      %h1
+        = t('postsNav')
+  %div.row
+    -@profile.posts.each do |post|
+      =render 'posts/show', post: post, comment_depth: 5

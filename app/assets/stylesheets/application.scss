@@ -17,26 +17,40 @@
 
 $font: 'Times New Romanm','Times',serif;
 $babyPink: #ffa3c5;
+$pastelPink: #ffdef3;
 $primBlue: #4287f5;
-$margin: 20px;
+$margin: 15px;
+
+img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  &.largeImg{
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
 
 div {
   &.col-auto, &.col {
-    border: 2px;
-    border-style: solid;
-    border-color: $primBlue;
+
   }
   &.row{
-    border: 3px;
-    border-style: solid;
-    border-color: $primBlue;
-    border-radius: 10px;
   }
   &.container-fluid, &.container{
     border: 4px;
     border-style: solid;
-    border-color: $babyPink;
     border-radius: 15px;
+    margin-bottom: 30px;
+  }
+  &.container-fluid{
+    border-color: $babyPink;
+  }
+  &.container{
+    border-color: $primBlue;
+    background-color: $pastelPink;
   }
 }
 
@@ -46,14 +60,17 @@ body{
   background-color: white;
 }
 
-p.navTitle{
+p{
+  margin: $margin;
+  margin-top: 20px;
+  &.navTitle{
   color: $babyPink;
   font-size: 30px;
   margin: 10px ;
-}
-
-p.app_description{
-  color: white;
-  font-size: 20px;
-  margin-left: $margin;
+  }
+  &.app_description{
+    color: white;
+    font-size: 20px;
+    margin-top: -5px;
+  }
 }
