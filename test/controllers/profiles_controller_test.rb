@@ -3,8 +3,6 @@ require 'test_helper'
 class ProfilesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
   setup do
-    @user = User.new({email: 'james@example.com', password: '123abcd'})
-    @user.save
     sign_in users(:one)
     @profile = profiles(:one)
   end
@@ -15,14 +13,15 @@ class ProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
+    sign_in users(:four)
     get new_profile_url
     assert_response :success
   end
 
   test "should create profile" do
-    sign_in @user
+    sign_in users(:four)
     assert_difference('Profile.count') do
-      post profiles_url, params: { profile: { bio: @profile.bio, dob: @profile.dob, first_name: @profile.first_name, picture_url: @profile.picture_url, surname: @profile.surname } }
+      post profiles_url, params: { profile: {dob: @profile.dob, first_name: @profile.first_name, surname: @profile.surname } }
     end
 
     assert_redirected_to profile_url(Profile.last)

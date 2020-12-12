@@ -13,3 +13,6 @@ two:
 three:
   email: three@domain.com
   encrypted_password: nothing
+four:
+  email: four@domain.com
+  encrypted_password: nothing

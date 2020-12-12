@@ -9,22 +9,20 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create comment" do
     assert_difference('Comment.count') do
-      post comments_url, params: { comment: { comment_text: @comment.comment_text, post_id: @comment.post_id, profile_id: @comment.profile_id } }
+      post comments_url, xhr: true,  params: { comment: { comment_text: @comment.comment_text, post_id: @comment.post_id, profile_id: @comment.profile_id } }
     end
-
-    assert_redirected_to comment_url(Comment.last)
+    assert_response :success
   end
 
   test "should update comment" do
-    patch comment_url(@comment), params: { comment: { comment_text: @comment.comment_text, post_id: @comment.post_id, profile_id: @comment.profile_id } }
-    assert_redirected_to comment_url(@comment)
+    patch comment_url(@comment), xhr: true , params: { comment: { comment_text: @comment.comment_text, post_id: @comment.post_id, profile_id: @comment.profile_id } }
+    assert_response :success
   end
 
   test "should destroy comment" do
     assert_difference('Comment.count', -1) do
-      delete comment_url(@comment)
+      delete comment_url(@comment), xhr: true
     end
-
-    assert_redirected_to comments_url
+    assert_response :success
   end
 end

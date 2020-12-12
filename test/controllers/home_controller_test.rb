@@ -2,6 +2,9 @@ require 'test_helper'
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
+  setup do
+    sign_in(users(:one))
+  end
   test "should get home" do
     get root_url
     assert_response :success

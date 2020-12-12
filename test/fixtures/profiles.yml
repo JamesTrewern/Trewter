@@ -2,18 +2,18 @@
 
 one:
   user: one
-  first_name: MyString
-  surname: MyString
+  first_name: Mystring
+  surname: Mystring
   dob: 1999-11-24
 
 two:
   user: two
-  first_name: MyString
-  surname: MyString
+  first_name: Mystring
+  surname: Mystring
   dob: 1999-11-24
 
 three:
   user: three
-  first_name: MyString
-  surname: MyString
+  first_name: Mystring
+  surname: Mystring
   dob: 1999-11-24
