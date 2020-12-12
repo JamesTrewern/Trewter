@@ -1,0 +1,2 @@
+profileRow = "<%= escape_javascript(render partial: 'profiles/listShow', locals: { profile: @follow.followed } )%>"
+$("div#profile<%=@follow.followed.id%>").replaceWith(profileRow)

@@ -24,6 +24,15 @@
       user2.save
     end
 
+    user3 = User.find_by(email: 'trewern.jake@gmail.com')
+    unless user3
+      user3 = User.new
+      user3.email = "trewern.jake@gmail.com"
+      user3.password = "123abcd"
+      user3.password_confirmation = "123abcd"
+      user3.save
+    end
+
     profile1 = Profile.where(first_name: 'James').where(surname: 'Trewern').first
     unless profile1
       profile1 = Profile.new({first_name: 'James', surname: 'Trewern', dob: Date::strptime("10-12-1999", "%d-%m-%Y"), user: user1})
@@ -33,13 +42,31 @@
     profile2 = Profile.where(first_name: 'Jack').where(surname: 'Trewern').first
     unless profile2
       profile2 = Profile.new({first_name: 'Jack', surname: 'Trewern', dob: Date::strptime("11-12-1999", "%d-%m-%Y"), user: user2})
-      profile1.save
+      profile2.save
+    end
+
+    profile3 = Profile.where(first_name: 'Jake').where(surname: 'Trewern').first
+    unless profile3
+      profile3 = Profile.new({first_name: 'Jake', surname: 'Trewern', dob: Date::strptime("12-12-1999", "%d-%m-%Y"), user: user3})
+      profile3.save
     end
 
     follow1 = Follow.where(follower: profile2).where(followed: profile1).first
     unless follow1
       follow1 = Follow.new({followed: profile1, follower: profile2})
       follow1.save
+    end
+
+    follow2 = Follow.where(follower: profile2).where(followed: profile3).first
+    unless follow2
+      follow2 = Follow.new({follower: profile2, followed: profile3})
+      follow2.save
+    end
+
+    follow3 = Follow.where(follower: profile3).where(followed: profile2).first
+    unless follow3
+      follow3 = Follow.new({follower: profile3, followed: profile2})
+      follow3.save
     end
 
     post1 = Post.where(title: 'welcome to trewter').first
