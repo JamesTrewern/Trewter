@@ -1,20 +1,5 @@
-%h1 Listing posts
+- @posts.each do |post|
+  =render 'posts/showPost', post: post, comment_depth: 3
 
-%table
-  %thead
-    %tr
-      %th Profile
-      %th Title
-      %th Post text
-      %th Image url
-      %th
-      %th
-      %th
-
-  %tbody
-    - @posts.each do |post|
-      =render 'posts/showPost', post: post, comment_depth: 3
-
-%br
 
 = link_to 'New Post', new_post_path

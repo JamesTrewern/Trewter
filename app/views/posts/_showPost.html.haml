@@ -34,5 +34,6 @@
   -else
     -post.comments.each do |comment|
       = render 'comments/show', comment: comment
-  %div.row{'id' => "addCommentRow"}
-    = render 'comments/form', comment: Comment.new,  post: post
+  %div.row#addCommentRow
+    %div.col.form
+      = render 'comments/form', comment: Comment.new,  post: post

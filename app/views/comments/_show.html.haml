@@ -12,8 +12,7 @@
       %div.row{'id' => "commentText#{comment.id}"}
         = comment.comment_text
   -if comment.profile == current_user.profile
-    %div.col
-      %div.btn-group{'role' => 'group'}
-        %button{'class' => 'btn btn-secondary', 'onclick' => "commentEdit(this,#{comment.id});"} Edit
-        =button_to 'Update', comment, method: :put,remote: true, params: {comment: {comment_text: comment.id}}, class: 'btn btn-secondary', id: "commentUpdate", commentID: comment.id
-        =button_to 'Delete', comment, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
+    %div.col.d-flex
+      %button{'class' => 'btn btn-secondary', 'onclick' => "commentEdit(this,#{comment.id});"} Edit
+      =button_to 'Update', comment, method: :put,remote: true, params: {comment: {comment_text: comment.id}}, class: 'btn btn-secondary', id: "commentUpdate", commentID: comment.id
+      =button_to 'Delete', comment, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
