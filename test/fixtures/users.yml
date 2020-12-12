@@ -10,3 +10,6 @@ one:
 two:
   email: two@domain.com
   encrypted_password: nothing
+three:
+  email: three@domain.com
+  encrypted_password: nothing

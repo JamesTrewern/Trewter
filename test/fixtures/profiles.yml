@@ -5,13 +5,15 @@ one:
   first_name: MyString
   surname: MyString
   dob: 1999-11-24
-  bio: MyText
-  picture_url:
 
 two:
   user: two
   first_name: MyString
   surname: MyString
   dob: 1999-11-24
-  bio: MyText
-  picture_url: 
+
+three:
+  user: three
+  first_name: MyString
+  surname: MyString
+  dob: 1999-11-24
