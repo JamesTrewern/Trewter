@@ -1,18 +1,14 @@
-%div.row{'id' => 'comment' + comment.id.to_s}
-  %div.col-auto
-    -if comment.profile.picture_url
-      %image{'source' => @post.profile.image_url}
-    -else
-      = image_tag('defaultProfile.png')
-  %div.col
-    %div.container
-      %div.row
-        = comment.profile.first_name
-        = comment.profile.surname
-      %div.row{'id' => "commentText#{comment.id}"}
-        = comment.comment_text
-  -if comment.profile == current_user.profile
-    %div.col.d-flex
-      %button{'class' => 'btn btn-secondary', 'onclick' => "commentEdit(this,#{comment.id});"} Edit
-      =button_to 'Update', comment, method: :put,remote: true, params: {comment: {comment_text: comment.id}}, class: 'btn btn-secondary', id: "commentUpdate", commentID: comment.id
-      =button_to 'Delete', comment, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
+.container{'id' => 'comment' + comment.id.to_s}
+  =render 'profiles/listShow', profile: comment.profile # a one line representation of the commenters profile
+  .row
+    = comment.comment_text
+  -if comment.profile == current_user.profile #if this comment belongs to the current user give access to edit and destroy
+    .row.justify-content-start
+      .col-auto
+        -#commentEdit, defined in comments.coffee, creates a text field to edit the comment text
+        %button.btn.btn-secondary{'onclick' => "commentEdit(this,#{comment.id});"}
+          = "#{t('edit')}  #{t('comment')}"
+      .col-auto
+        =button_to "#{t('update')} #{t('comment')}", comment, method: :put,remote: true, params: {comment: {comment_text: comment.id}}, class: 'btn btn-secondary', id: "commentUpdate", commentID: comment.id
+      .col-auto
+        =button_to "#{t('delete')}  #{t('comment')}", comment, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"

@@ -1,4 +1,10 @@
+<%# find the container of the post which the comment belongs to%>
 $("#postContainer<%=@comment.post.id%>").append("<%= escape_javascript(render partial: 'comments/show', locals: { comment: @comment } ) %>");
+
+<%# find an add comment row and store the result
+    removed the add comment row for a the post
+    append the add comment row to the bottom of the class
+%>
 addComment = $("#addCommentRow")
 $("#postContainer<%=@comment.post.id%>").find("#addCommentRow").remove()
 $("#postContainer<%=@comment.post.id%>").append(addComment)

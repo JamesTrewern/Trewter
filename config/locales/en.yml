@@ -33,6 +33,10 @@ en:
   app_title: Trewter
   app_description: A place where you and your friends can pretend to be happier than you are so everyone is jealous of you
   account_settings: Account settings
+  update: Update
+  edit: Edit
+  delete: Delete
+  comment: Comment
   profilesNav: Profiles
   postsNav: Posts
   profiles:
@@ -40,7 +44,9 @@ en:
       follow: follow
       unfollow: unfollow
       followers: "followers:"
-
+  comments:
+    form:
+      add_comment: Add Comment
   home:
     home:
       title: Trewter
