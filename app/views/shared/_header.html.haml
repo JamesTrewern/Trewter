@@ -1,4 +1,4 @@
-%div.container-fluid.bg-primary
+.container-fluid.bg-primary
   %nav.navbar.navbar-expand-lg.navbar-light.bg-primary
     %a.navbar-brand{:href => root_path}
       %p.navTitle
@@ -12,7 +12,7 @@
           %a.nav-link.text-white{:href => profiles_path}
             =t('profilesNav')
         -if user_signed_in?
-          -unless current_user.profile
+          -if current_user.profile
             %li.nav-item
               %a.nav-link.text-white{:href => profile_path(current_user.profile)}
                 = current_user.profile.first_name
@@ -30,9 +30,9 @@
           %li.nav-item
             %a.nav-link.text-white{:href => new_user_registration_path}
               = t('sign_up')
-      %form.form-inline.my-2.my-lg-0
-        %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
-        %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+      %form.form-inline.my-2.my-lg-0{action: posts_path}
+        %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search", :name => "query"}/
+        %button.btn.btn-outline-light.my-2.my-sm-0{:type => "submit"} Search
   %p.app_description= t('app_description')
   - flash.each do |key, value|
     = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?

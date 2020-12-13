@@ -9,4 +9,7 @@ class Post < ApplicationRecord
   scope :feed, ->(user) {
     Post.followed(user) + user.profile.posts
    }
+   scope :search, ->(query) {
+     Post.where("title like ?","%#{query}%") + Post.where("post_text like ?","%#{query}%")
+   }
 end

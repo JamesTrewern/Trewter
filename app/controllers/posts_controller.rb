@@ -6,7 +6,11 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @post = Post.new
-    @posts = Post.feed(current_user)
+    if params[:query]
+      @posts = Post.search(params[:query])
+    else
+      @posts = Post.feed(current_user)
+    end
   end
 
   # GET /posts/1
