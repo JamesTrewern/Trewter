@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 @commentEdit = (button,id) ->
   button.hidden = true
-  $(button).parent().find("#commentUpdate").show()
+  $(button).parent().parent().find("#commentUpdate").show()
   text = $("#commentText#{id}").html()
   $("#commentText#{id}").html("<textarea oninput=\"commentTextEdit(this,#{id})\">#{text}</textarea>")
   return

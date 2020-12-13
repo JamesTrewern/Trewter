@@ -1,14 +1,14 @@
 .container{'id' => 'comment' + comment.id.to_s}
   =render 'profiles/listShow', profile: comment.profile # a one line representation of the commenters profile
-  .row
+  .row{'id' => 'commentText' + comment.id.to_s}
     = comment.comment_text
   -if comment.profile == current_user.profile #if this comment belongs to the current user give access to edit and destroy
     .row.justify-content-start
       .col-auto
         -#commentEdit, defined in comments.coffee, creates a text field to edit the comment text
         %button.btn.btn-secondary{'onclick' => "commentEdit(this,#{comment.id});"}
-          = "#{t('edit')}  #{t('comment')}"
+          = t('.edit')
       .col-auto
-        =button_to "#{t('update')} #{t('comment')}", comment, method: :put,remote: true, params: {comment: {comment_text: comment.id}}, class: 'btn btn-secondary', id: "commentUpdate", commentID: comment.id
+        =button_to t('.update'), comment, method: :put,remote: true, params: {comment: {comment_text: comment.id}}, class: 'btn btn-secondary', id: "commentUpdate", commentID: comment.id
       .col-auto
-        =button_to "#{t('delete')}  #{t('comment')}", comment, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
+        =button_to t('.delete'), comment, method: :delete, remote: true, data: {confirm: t('confirm') }, class: "btn btn-secondary"
