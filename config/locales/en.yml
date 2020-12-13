@@ -45,6 +45,10 @@ en:
       follow: Follow
       unfollow: Unfollow
       followers: "Followers:"
+      edit: Edit Profile
+      delete: Delete Profile
+    form:
+      save: Save Profile
 
   comments:
     form:

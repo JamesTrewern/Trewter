@@ -1,25 +1,25 @@
-%div.row.justify-content-start{"id" => "profile#{profile.id}"}
-  %div.col-auto
+.row.justify-content-start.bg-primary.profileListShow{"id" => "profile#{profile.id}"}
+  .col-auto
     -if profile.picture_url
       = image_tag(profile.picture_url)
     -else
       = image_tag('defaultProfile.png')
-  %div.col-auto
-    %p.name
-      = link_to "#{profile.first_name}  #{profile.surname}", profile
 
-  %div.col-auto
+  %a.col-auto{'href' => profile_path(profile)}
+    %p.name
+      ="#{profile.first_name}  #{profile.surname}"
+  .col-auto
     -if current_user.profile == profile
-      %div.btn-group
-        = button_to 'Edit Profile', edit_profile_path(profile) , method: :get, class: "btn btn-secondary"
-        = button_to 'Delete', profile, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
+      .btn-group
+        = button_to t('.edit'), edit_profile_path(profile) , method: :get, class: "btn btn-light"
+        = button_to t('.delete'), profile, method: :delete, remote: true, data: { confirm: t('confirm') }, class: "btn btn-light"
     -else
       -if current_user.profile.followed.include?(profile)
         -follow = Follow.find_by(follower_id: current_user.profile.id, followed_id: profile.id)
-        = button_to t('.unfollow'), follow , method: :delete, remote: true, class: "btn btn-primary"
+        = button_to t('.unfollow'), follow , method: :delete, remote: true, class: "btn btn-light"
       -else
-        = button_to t('.follow'), follows_path(:method => :post, follow:{follower_id: current_user.profile.id, followed_id: profile.id}),  remote: true, class: "btn btn-primary"
-  %div.col-auto
+        = button_to t('.follow'), follows_path(:method => :post, follow:{follower_id: current_user.profile.id, followed_id: profile.id}),  remote: true, class: "btn btn-light"
+  .col-auto
     %p
       =t('.followers')
       = profile.followers.size()

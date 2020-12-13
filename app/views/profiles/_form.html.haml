@@ -1,32 +1,31 @@
-%div.container
-  = form_for @profile do |f|
+.container
+  = form_for @profile, method: :patch do |f|
     - if @profile.errors.any?
       #error_explanation
-        %h2= "#{pluralize(@profile.errors.count, "error")} prohibited this profile from being saved:"
+        %h2= "#{pluralize(@profile.errors.count, "error")} #{t('create_failed',class: "profile")}"
         %ul
           - @profile.errors.full_messages.each do |message|
             %li= message
-    %div.row.justify-content-center
-      %div.col-auto
+    .row.justify-content-center
+      .col-auto
         = f.label :Name
-      %div.col-auto
+      .col-auto
         .field
           = f.text_field :first_name
-      %div.col-auto
+      .col-auto
         .field
           = f.text_field :surname
-    %div.row.justify-content-center
-      %div.col-auto
+    .row.justify-content-center
+      .col-auto
         .field
           = f.label :dob
           = f.date_select :dob, :start_year=>1940
-    %div.row.justify-content-center
-      %div.col-auto
+    .row.justify-content-center
+      .col-auto
         .field
           = f.label :bio
           = f.text_area :bio
-    %div.row.justify-content-center
-      %div.col-auto
+    .row.justify-content-center
+      .col-auto
         .actions
-          = f.submit 'Save', class: "btn btn-secondary"
-      
+          = f.submit t('.save'), class: "btn btn-secondary"

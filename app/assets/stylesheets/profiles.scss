@@ -1,7 +1,14 @@
 // Place all the styles related to the Profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$babyPink: #ffa3c5;
 p.name{
   font-size: 30px;
-  margin: 10px;
+  margin: 20px;
+  color: white;
+}
+div.profileListShow{
+  border: 3px;
+  border-style: solid;
+  border-color: $babyPink;
 }

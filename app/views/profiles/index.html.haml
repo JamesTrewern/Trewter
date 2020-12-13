@@ -1,4 +1,4 @@
-%div.container
+.container
   - @profiles.each do |profile|
     - unless current_user.profile == profile
-      = render 'profiles/listShow', profile: profile
+      = render 'listShow', profile: profile
