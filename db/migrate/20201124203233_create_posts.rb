@@ -4,7 +4,6 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.belongs_to :profile, foreign_key: true
       t.string :title, null: false
       t.text :post_text
-      t.string :image_url
 
       t.timestamps
     end

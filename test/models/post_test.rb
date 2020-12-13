@@ -31,4 +31,16 @@ class PostTest < ActiveSupport::TestCase
     post2.save
     refute post2.valid?
   end
+
+  test 'should only get following posts' do
+    assert Post.followed(users(:three)).include?(posts(:one))
+    refute Post.followed(users(:three)).include?(posts(:two))
+    refute Post.followed(users(:three)).include?(posts(:three))
+  end
+
+  test 'should only get feed posts' do
+    assert Post.feed(users(:three)).include?(posts(:one))
+    refute Post.feed(users(:three)).include?(posts(:two))
+    assert Post.feed(users(:three)).include?(posts(:three))
+  end
 end

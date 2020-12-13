@@ -4,10 +4,13 @@ one:
   profile: one
   title: title1
   post_text: MyText
-  image_url: MyString
 
 two:
   profile: two
   title: title2
   post_text: MyText
-  image_url: MyString
+
+three:
+  profile: three
+  title: title3
+  post_text: MyText

@@ -15,7 +15,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create post" do
     assert_difference('Post.count') do
-      post posts_url, params: { post: { image_url: @post.image_url, post_text: @post.post_text, title: @post.title + 'create'} }
+      post posts_url, params: { post: { post_text: @post.post_text, title: @post.title + 'create'} }
     end
     assert_redirected_to post_url(Post.last)
   end
@@ -31,7 +31,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update post" do
-    patch post_url(@post), params: { post: { image_url: @post.image_url, post_text: @post.post_text, title: @post.title } }
+    patch post_url(@post), params: { post: { post_text: @post.post_text, title: @post.title } }
     assert_redirected_to post_url(@post)
   end
 

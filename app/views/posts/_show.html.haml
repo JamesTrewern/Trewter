@@ -7,6 +7,4 @@
     .col.postText
       %p.textBlock
         = post.post_text
-      -if post.image_url
-        %image{'source' => post.image_url}
   = render 'posts/postComments', post: post, comment_depth: comment_depth

@@ -43126,3 +43126,811 @@ Processing by ProfilesController#new as HTML
 Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.2ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+Migrating to RemoveImageUrlColunm (20201213170339)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aprofiles" ("id" integer NOT NULL PRIMARY KEY, "first_name" varchar NOT NULL, "surname" varchar NOT NULL, "dob" date NOT NULL, "bio" text DEFAULT NULL, "picture_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer NOT NULL)[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aprofiles_on_user_id" ON "aprofiles" ("user_id")[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:3
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aprofiles" ("id","first_name","surname","dob","bio","picture_url","created_at","updated_at","user_id")
+                     SELECT "id","first_name","surname","dob","bio","picture_url","created_at","updated_at","user_id" FROM "profiles"[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "profiles"[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer NOT NULL PRIMARY KEY, "first_name" varchar NOT NULL, "surname" varchar NOT NULL, "dob" date NOT NULL, "bio" text DEFAULT NULL, "picture_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer NOT NULL)[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_profiles_on_user_id" ON "profiles" ("user_id")[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "profiles" ("id","first_name","surname","dob","bio","picture_url","created_at","updated_at","user_id")
+                     SELECT "id","first_name","surname","dob","bio","picture_url","created_at","updated_at","user_id" FROM "aprofiles"[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aprofiles"[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aposts" ("id" integer NOT NULL PRIMARY KEY, "profile_id" integer DEFAULT NULL, "title" varchar NOT NULL, "post_text" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aposts_on_title" ON "aposts" ("title")[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aposts_on_profile_id" ON "aposts" ("profile_id")[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:4
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aposts" ("id","profile_id","title","post_text","image_url","created_at","updated_at")
+                     SELECT "id","profile_id","title","post_text","image_url","created_at","updated_at" FROM "posts"[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer NOT NULL PRIMARY KEY, "profile_id" integer DEFAULT NULL, "title" varchar NOT NULL, "post_text" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_profile_id" ON "posts" ("profile_id")[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_posts_on_title" ON "posts" ("title")[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:4
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("id","profile_id","title","post_text","created_at","updated_at")
+                     SELECT "id","profile_id","title","post_text","created_at","updated_at" FROM "aposts"[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aposts"[0m
+  ↳ db/migrate/20201213170339_remove_image_url_colunm.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201213170339"]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "profile_id" integer, "comment_text" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_profile_id" ON "comments" ("profile_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "follows"[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "follows" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts"[0m
+  ↳ db/schema.rb:32
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "profile_id" integer, "title" varchar NOT NULL, "post_text" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:32
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_profile_id" ON "posts" ("profile_id")[0m
+  ↳ db/schema.rb:32
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_posts_on_title" ON "posts" ("title")[0m
+  ↳ db/schema.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles"[0m
+  ↳ db/schema.rb:42
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar NOT NULL, "surname" varchar NOT NULL, "dob" date NOT NULL, "bio" text, "picture_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_profiles_on_user_id" ON "profiles" ("user_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201213170339)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201124200359),
+(20201124210528),
+(20201124203938),
+(20201124203512),
+(20201125120644),
+(20201124203233),
+(20201202025854);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-13 17:05:42.843526"], ["updated_at", "2020-12-13 17:05:42.843526"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "profile_id" integer, "comment_text" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_profile_id" ON "comments" ("profile_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "follows"[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "follows" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts"[0m
+  ↳ db/schema.rb:32
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "profile_id" integer, "title" varchar NOT NULL, "post_text" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:32
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_profile_id" ON "posts" ("profile_id")[0m
+  ↳ db/schema.rb:32
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_posts_on_title" ON "posts" ("title")[0m
+  ↳ db/schema.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles"[0m
+  ↳ db/schema.rb:42
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar NOT NULL, "surname" varchar NOT NULL, "dob" date NOT NULL, "bio" text, "picture_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_profiles_on_user_id" ON "profiles" ("user_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:54
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201213170339)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201124200359),
+(20201124210528),
+(20201124203938),
+(20201124203512),
+(20201125120644),
+(20201124203233),
+(20201202025854);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-13 17:05:42.890574"], ["updated_at", "2020-12-13 17:05:42.890574"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-12-13 17:05:42.894025"], ["key", "environment"]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trewern.james@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trewern.james@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "trewern.james@gmail.com"], ["encrypted_password", "$2a$12$WqTaGmDBjCGHWjOGjSzjtumkjQ1RVLGdvpURuRJeyTHweKriqIOqq"], ["created_at", "2020-12-13 17:05:43.077442"], ["updated_at", "2020-12-13 17:05:43.077442"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trewern.jack@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trewern.jack@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "trewern.jack@gmail.com"], ["encrypted_password", "$2a$12$ef9ySIa6bwEPcw8lbbZZwOD3yZZ9soRvoqhLSbAFzH4clzSvQYgMu"], ["created_at", "2020-12-13 17:05:43.225329"], ["updated_at", "2020-12-13 17:05:43.225329"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trewern.jake@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trewern.jake@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "trewern.jake@gmail.com"], ["encrypted_password", "$2a$12$Y7VVW2JEjQ5OOirTeyYVReQx6g3gbCHPpxxWihdX8mF5Dv31AUJQu"], ["created_at", "2020-12-13 17:05:43.371862"], ["updated_at", "2020-12-13 17:05:43.371862"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."first_name" = ? AND "profiles"."surname" = ? ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["first_name", "James"], ["surname", "Trewern"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mProfile Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("first_name", "surname", "dob", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["surname", "Trewern"], ["dob", "1999-12-10"], ["created_at", "2020-12-13 17:05:43.385477"], ["updated_at", "2020-12-13 17:05:43.385477"], ["user_id", 1]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."first_name" = ? AND "profiles"."surname" = ? ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["first_name", "Jack"], ["surname", "Trewern"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mProfile Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("first_name", "surname", "dob", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jack"], ["surname", "Trewern"], ["dob", "1999-12-11"], ["created_at", "2020-12-13 17:05:43.389520"], ["updated_at", "2020-12-13 17:05:43.389520"], ["user_id", 2]]
+  ↳ db/seeds.rb:45
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."first_name" = ? AND "profiles"."surname" = ? ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["first_name", "Jake"], ["surname", "Trewern"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mProfile Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("first_name", "surname", "dob", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jake"], ["surname", "Trewern"], ["dob", "1999-12-12"], ["created_at", "2020-12-13 17:05:43.393255"], ["updated_at", "2020-12-13 17:05:43.393255"], ["user_id", 3]]
+  ↳ db/seeds.rb:51
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mFollow Load (0.1ms)[0m  [1m[34mSELECT  "follows".* FROM "follows" WHERE "follows"."follower_id" = ? AND "follows"."followed_id" = ? ORDER BY "follows"."id" ASC LIMIT ?[0m  [["follower_id", 2], ["followed_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:54
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:57
+  [1m[36mFollow Create (0.2ms)[0m  [1m[32mINSERT INTO "follows" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 2], ["followed_id", 1], ["created_at", "2020-12-13 17:05:43.403314"], ["updated_at", "2020-12-13 17:05:43.403314"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:57
+  [1m[36mFollow Load (0.1ms)[0m  [1m[34mSELECT  "follows".* FROM "follows" WHERE "follows"."follower_id" = ? AND "follows"."followed_id" = ? ORDER BY "follows"."id" ASC LIMIT ?[0m  [["follower_id", 2], ["followed_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mFollow Create (0.2ms)[0m  [1m[32mINSERT INTO "follows" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 2], ["followed_id", 3], ["created_at", "2020-12-13 17:05:43.406435"], ["updated_at", "2020-12-13 17:05:43.406435"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mFollow Load (0.1ms)[0m  [1m[34mSELECT  "follows".* FROM "follows" WHERE "follows"."follower_id" = ? AND "follows"."followed_id" = ? ORDER BY "follows"."id" ASC LIMIT ?[0m  [["follower_id", 3], ["followed_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mFollow Create (0.1ms)[0m  [1m[32mINSERT INTO "follows" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 3], ["followed_id", 2], ["created_at", "2020-12-13 17:05:43.409188"], ["updated_at", "2020-12-13 17:05:43.409188"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."title" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["title", "welcome to trewter"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:72
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:75
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", "welcome to trewter"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:75
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("profile_id", "title", "post_text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["profile_id", 1], ["title", "welcome to trewter"], ["post_text", "example post text"], ["created_at", "2020-12-13 17:05:43.418094"], ["updated_at", "2020-12-13 17:05:43.418094"]]
+  ↳ db/seeds.rb:75
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:75
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."title" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["title", "second example post"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:81
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", "second example post"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("profile_id", "title", "post_text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["profile_id", 2], ["title", "second example post"], ["post_text", "example post text again"], ["created_at", "2020-12-13 17:05:43.421675"], ["updated_at", "2020-12-13 17:05:43.421675"]]
+  ↳ db/seeds.rb:81
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:81
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+Migrating to RemoveImageUrlColunm (20201213170339)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "profile_id" integer, "comment_text" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_profile_id" ON "comments" ("profile_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "follows"[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "follows" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts"[0m
+  ↳ db/schema.rb:32
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "profile_id" integer, "title" varchar NOT NULL, "post_text" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:32
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_profile_id" ON "posts" ("profile_id")[0m
+  ↳ db/schema.rb:32
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_posts_on_title" ON "posts" ("title")[0m
+  ↳ db/schema.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles"[0m
+  ↳ db/schema.rb:42
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar NOT NULL, "surname" varchar NOT NULL, "dob" date NOT NULL, "bio" text, "picture_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_profiles_on_user_id" ON "profiles" ("user_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:54
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201213170339)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201124200359),
+(20201124210528),
+(20201124203938),
+(20201124203512),
+(20201125120644),
+(20201124203233),
+(20201202025854);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-13 17:09:42.646391"], ["updated_at", "2020-12-13 17:09:42.646391"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "profile_id" integer, "comment_text" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_profile_id" ON "comments" ("profile_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "follows"[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "follows" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts"[0m
+  ↳ db/schema.rb:32
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "profile_id" integer, "title" varchar NOT NULL, "post_text" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:32
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_profile_id" ON "posts" ("profile_id")[0m
+  ↳ db/schema.rb:32
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_posts_on_title" ON "posts" ("title")[0m
+  ↳ db/schema.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles"[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar NOT NULL, "surname" varchar NOT NULL, "dob" date NOT NULL, "bio" text, "picture_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_profiles_on_user_id" ON "profiles" ("user_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:54
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:54
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201213170339)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201124200359),
+(20201124210528),
+(20201124203938),
+(20201124203512),
+(20201125120644),
+(20201124203233),
+(20201202025854);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-13 17:09:42.682082"], ["updated_at", "2020-12-13 17:09:42.682082"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-12-13 17:09:42.685150"], ["key", "environment"]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/bin/rake:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trewern.james@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trewern.james@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "trewern.james@gmail.com"], ["encrypted_password", "$2a$12$.TCbhPtH7W5QbhgvAYfQXeQTY.Q9hAv4F9S4i0Vwyxy9hN5cTfJqe"], ["created_at", "2020-12-13 17:09:42.846903"], ["updated_at", "2020-12-13 17:09:42.846903"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trewern.jack@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trewern.jack@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "trewern.jack@gmail.com"], ["encrypted_password", "$2a$12$2nfPoTHZ/8JOXHahXBkojOPs1ANNOZu128mdM4/pIUL9y8ybh4Zsm"], ["created_at", "2020-12-13 17:09:42.995349"], ["updated_at", "2020-12-13 17:09:42.995349"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trewern.jake@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trewern.jake@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "trewern.jake@gmail.com"], ["encrypted_password", "$2a$12$Icy8ygAPxLxY5L3rsjdvbuis/sC13Y6bepWlqRcilQgwMYgoLp4u6"], ["created_at", "2020-12-13 17:09:43.146871"], ["updated_at", "2020-12-13 17:09:43.146871"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."first_name" = ? AND "profiles"."surname" = ? ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["first_name", "James"], ["surname", "Trewern"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mProfile Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("first_name", "surname", "dob", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["surname", "Trewern"], ["dob", "1999-12-10"], ["created_at", "2020-12-13 17:09:43.160521"], ["updated_at", "2020-12-13 17:09:43.160521"], ["user_id", 1]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."first_name" = ? AND "profiles"."surname" = ? ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["first_name", "Jack"], ["surname", "Trewern"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mProfile Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("first_name", "surname", "dob", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jack"], ["surname", "Trewern"], ["dob", "1999-12-11"], ["created_at", "2020-12-13 17:09:43.164239"], ["updated_at", "2020-12-13 17:09:43.164239"], ["user_id", 2]]
+  ↳ db/seeds.rb:45
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."first_name" = ? AND "profiles"."surname" = ? ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["first_name", "Jake"], ["surname", "Trewern"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mProfile Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("first_name", "surname", "dob", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jake"], ["surname", "Trewern"], ["dob", "1999-12-12"], ["created_at", "2020-12-13 17:09:43.167446"], ["updated_at", "2020-12-13 17:09:43.167446"], ["user_id", 3]]
+  ↳ db/seeds.rb:51
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mFollow Load (0.1ms)[0m  [1m[34mSELECT  "follows".* FROM "follows" WHERE "follows"."follower_id" = ? AND "follows"."followed_id" = ? ORDER BY "follows"."id" ASC LIMIT ?[0m  [["follower_id", 2], ["followed_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:54
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:57
+  [1m[36mFollow Create (0.2ms)[0m  [1m[32mINSERT INTO "follows" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 2], ["followed_id", 1], ["created_at", "2020-12-13 17:09:43.174316"], ["updated_at", "2020-12-13 17:09:43.174316"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:57
+  [1m[36mFollow Load (0.1ms)[0m  [1m[34mSELECT  "follows".* FROM "follows" WHERE "follows"."follower_id" = ? AND "follows"."followed_id" = ? ORDER BY "follows"."id" ASC LIMIT ?[0m  [["follower_id", 2], ["followed_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mFollow Create (0.2ms)[0m  [1m[32mINSERT INTO "follows" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 2], ["followed_id", 3], ["created_at", "2020-12-13 17:09:43.177267"], ["updated_at", "2020-12-13 17:09:43.177267"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mFollow Load (0.1ms)[0m  [1m[34mSELECT  "follows".* FROM "follows" WHERE "follows"."follower_id" = ? AND "follows"."followed_id" = ? ORDER BY "follows"."id" ASC LIMIT ?[0m  [["follower_id", 3], ["followed_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mFollow Create (0.2ms)[0m  [1m[32mINSERT INTO "follows" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 3], ["followed_id", 2], ["created_at", "2020-12-13 17:09:43.182978"], ["updated_at", "2020-12-13 17:09:43.182978"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."title" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["title", "welcome to trewter"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:72
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:75
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", "welcome to trewter"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:75
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("profile_id", "title", "post_text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["profile_id", 1], ["title", "welcome to trewter"], ["post_text", "example post text"], ["created_at", "2020-12-13 17:09:43.191816"], ["updated_at", "2020-12-13 17:09:43.191816"]]
+  ↳ db/seeds.rb:75
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:75
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."title" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["title", "second example post"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:81
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", "second example post"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("profile_id", "title", "post_text", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["profile_id", 2], ["title", "second example post"], ["post_text", "example post text again"], ["created_at", "2020-12-13 17:09:43.195696"], ["updated_at", "2020-12-13 17:09:43.195696"]]
+  ↳ db/seeds.rb:81
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:81
+Started GET "/profiles/new" for 127.0.0.1 at 2020-12-13 09:12:03 -0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:18
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `profile' for nil:NilClass):
+  
+app/controllers/profiles_controller.rb:18:in `new'
+Started GET "/profiles/new" for 127.0.0.1 at 2020-12-13 09:13:39 -0800
+Processing by ProfilesController#new as HTML
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `authenticate_user' for #<ProfilesController:0x00007f25c43ccee0>
+Did you mean?  authenticate_user!):
+  
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.4) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.4) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.4) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.4) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.4) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.4) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.4) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/profiles/new" for 127.0.0.1 at 2020-12-13 09:13:50 -0800
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-12-13 09:13:50 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/james/.rvm/gems/ruby-2.5.8/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/james/.rvm/gems/ruby-2.5.8/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /home/james/.rvm/gems/ruby-2.5.8/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (3.9ms)
+  Rendered shared/_header.html.haml (5.8ms)
+  Rendered shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 149ms (Views: 148.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-12-13 09:13:55 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3mPhuXstlZ1/BQCYwD3D5lNyRgohsEKHe7XRl57Ur0n9f2QkkYCA9OYCJcTWtVmG5S6io2EkptBxJqfjsptdZA==", "user"=>{"email"=>"trewern.jack@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "trewern.jack@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/profiles/new
+Completed 302 Found in 147ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2020-12-13 09:13:55 -0800
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:19
+Redirected to http://localhost:3000/profiles/2/edit
+Completed 302 Found in 13ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles/2/edit" for 127.0.0.1 at 2020-12-13 09:13:55 -0800
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:73
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering profiles/edit.html.haml within layouts/application
+  Rendered profiles/_form.html.haml (4.2ms)
+  Rendered profiles/edit.html.haml within layouts/application (5.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" WHERE "profiles"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/shared/_header.html.haml:15
+  Rendered shared/_header.html.haml (6.4ms)
+  Rendered shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-13 09:13:58 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/models/post.rb:10
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/models/post.rb:10
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.5ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:2
+  [1m[36mProfile Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ? AND "profiles"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/_listShow.html.haml:17
+  [1m[36mFollow Load (0.1ms)[0m  [1m[34mSELECT  "follows".* FROM "follows" WHERE "follows"."follower_id" = ? AND "follows"."followed_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followed_id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/_listShow.html.haml:18
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (8.5ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:6
+  Rendered comments/_form.html.haml (2.3ms)
+  Rendered posts/_postComments.html.haml (9.5ms)
+  Rendered posts/_show.html.haml (21.8ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (1.4ms)
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:6
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.1ms)
+  Rendered posts/_show.html.haml (3.1ms)
+  Rendered posts/index.html.haml within layouts/application (29.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" WHERE "profiles"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/shared/_header.html.haml:15
+  Rendered shared/_header.html.haml (6.5ms)
+  Rendered shared/_footer.html.haml (0.6ms)
+Completed 200 OK in 69ms (Views: 52.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2020-12-13 09:13:59 -0800
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering profiles/index.html.haml within layouts/application
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.haml:2
+  [1m[36mProfile Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ? AND "profiles"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/_listShow.html.haml:17
+  [1m[36mFollow Load (0.0ms)[0m  [1m[34mSELECT  "follows".* FROM "follows" WHERE "follows"."follower_id" = ? AND "follows"."followed_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followed_id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/_listShow.html.haml:18
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (4.8ms)
+  [1m[36mProfile Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ? AND "profiles"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/views/profiles/_listShow.html.haml:17
+  [1m[36mFollow Load (0.1ms)[0m  [1m[34mSELECT  "follows".* FROM "follows" WHERE "follows"."follower_id" = ? AND "follows"."followed_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followed_id", 3], ["LIMIT", 1]]
+  ↳ app/views/profiles/_listShow.html.haml:18
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (2.6ms)
+  Rendered profiles/index.html.haml within layouts/application (9.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" WHERE "profiles"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/shared/_header.html.haml:15
+  Rendered shared/_header.html.haml (6.5ms)
+  Rendered shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.8ms)
+
+

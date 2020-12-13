@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   include ApplicationHelper
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_profile, except: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create]
   # GET /profiles
   # GET /profiles.json
   def index

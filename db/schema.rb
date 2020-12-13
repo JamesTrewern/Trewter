@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_025854) do
+ActiveRecord::Schema.define(version: 2020_12_13_170339) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "post_id"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2020_12_02_025854) do
     t.integer "profile_id"
     t.string "title", null: false
     t.text "post_text"
-    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_posts_on_profile_id"
