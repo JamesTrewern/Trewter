@@ -25,10 +25,6 @@ img{
   width: 50px;
   height: 50px;
   object-fit: cover;
-  &.largeImg{
-    width: 100px;
-    height: 100px;
-  }
 }
 
 .btn{
@@ -40,23 +36,12 @@ form{
   width: 100%;
 }
 
-div.field{
-  width: 100%;
-  height: 80px;
-  margin-left: $margin;
-}
-
 textarea{
-  width: 50%;
+  width: 80%;
   margin: auto;
 }
 
 div {
-  &.col-auto, &.col {
-
-  }
-  &.row{
-  }
   &.container-fluid, &.container{
     border: 4px;
     border-style: solid;
@@ -70,6 +55,14 @@ div {
     border-color: $primBlue;
     background-color: $pastelPink;
   }
+  &.field, &.actions {
+    margin: 25px;
+  }
+  &.field{
+    width: 100%;
+    height: 80px;
+    margin-left: $margin;
+  }
 }
 
 
@@ -79,6 +72,7 @@ body{
 }
 
 p{
+  font-size: 20px;
   margin: $margin;
   margin-top: 20px;
   &.navTitle{
@@ -88,6 +82,63 @@ p{
   }
   &.app_description{
     color: white;
-    font-size: 20px;
   }
+  &.textBlock{
+    font-size: 20px;
+    background-color: white;
+    padding: $margin
+  }
+}
+
+h{
+  &.elementTitle{
+    font-size: 40px;
+  }
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: $babyPink;
+  }
+}
+
+#notice {
+  color: $babyPink;
+  background-color: white;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: block;
 }

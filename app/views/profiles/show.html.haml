@@ -1,18 +1,16 @@
-%div.container
+.container
   =render 'listShow', profile: @profile
-  %div.row
-    %div.col
-      %h1
+  .row
+    .col
+      %h.elementTitle
         =t('.bio')
-      %p
+      %p.textBlock
         =@profile.bio
-
-
-%div.container
-  %div.row
-    %div.col
+.container
+  .row
+    .col
       %h1
         = t('postsNav')
-  %div.row
+  .row
     -@profile.posts.each do |post|
       =render 'posts/show', post: post, comment_depth: 5

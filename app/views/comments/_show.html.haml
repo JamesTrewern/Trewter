@@ -1,7 +1,9 @@
 .container{'id' => 'comment' + comment.id.to_s}
   =render 'profiles/listShow', profile: comment.profile # a one line representation of the commenters profile
   .row{'id' => 'commentText' + comment.id.to_s}
-    = comment.comment_text
+    .col.postText
+      %p.textBlock
+        = comment.comment_text
   -if comment.profile == current_user.profile #if this comment belongs to the current user give access to edit and destroy
     .row.justify-content-start
       .col-auto

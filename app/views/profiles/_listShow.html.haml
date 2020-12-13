@@ -20,6 +20,6 @@
       -else
         = button_to t('.follow'), follows_path(:method => :post, follow:{follower_id: current_user.profile.id, followed_id: profile.id}),  remote: true, class: "btn btn-light"
   .col-auto
-    %p
+    %p.text-white
       =t('.followers')
       = profile.followers.size()

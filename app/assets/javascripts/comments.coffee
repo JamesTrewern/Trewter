@@ -4,7 +4,7 @@
 @commentEdit = (button,id) ->
   button.hidden = true
   $(button).parent().parent().find("#commentUpdate").show()
-  text = $("#commentText#{id}").html()
+  text = $("#commentText#{id}").find("p").text()
   $("#commentText#{id}").html("<textarea oninput=\"commentTextEdit(this,#{id})\">#{text}</textarea>")
   return
 @commentTextEdit = (textField,id) ->
