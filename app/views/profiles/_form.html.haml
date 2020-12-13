@@ -1,5 +1,5 @@
 .container
-  = form_for @profile, method: :patch do |f|
+  = form_for @profile do |f|
     - if @profile.errors.any?
       #error_explanation
         %h2= "#{pluralize(@profile.errors.count, "error")} #{t('create_failed',class: "profile")}"

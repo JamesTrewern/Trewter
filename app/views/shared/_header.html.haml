@@ -12,7 +12,7 @@
           %a.nav-link.text-white{:href => profiles_path}
             =t('profilesNav')
         -if user_signed_in?
-          -if current_user.profile
+          -if Profile.where(user: current_user).size() == 1
             %li.nav-item
               %a.nav-link.text-white{:href => profile_path(current_user.profile)}
                 = current_user.profile.first_name
