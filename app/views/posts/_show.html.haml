@@ -12,11 +12,11 @@
     %div.col-auto
       %div.btn-group{'role' => 'group'}
         -if current_user.profile == post.profile
-          = button_to 'Edit', edit_post_path(post), class: "btn btn-secondary"
+          = button_to 'Edit', edit_post_path(post), method: :get, class: "btn btn-secondary"
           -if comment_depth > 0
             = button_to 'Delete', post, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
           -else
-            = button_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
+            = button_to 'Delete', post, method: :delete, class: "btn btn-secondary"
   %div.row
     %h
       = post.title
@@ -25,15 +25,4 @@
       = post.post_text
     -if post.image_url
       %image{'source' => post.image_url}
-  -if comment_depth > 0
-    -x = 0
-    -post.comments.each do |comment|
-      = render 'comments/show', comment: comment
-      -x += 1
-      -break if x == comment_depth
-  -else
-    -post.comments.each do |comment|
-      = render 'comments/show', comment: comment
-  %div.row#addCommentRow
-    %div.col.form
-      = render 'comments/form', comment: Comment.new,  post: post
+  = render 'postComments', post: post, comment_depth: comment_depth

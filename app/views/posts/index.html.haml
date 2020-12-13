@@ -1,5 +1,3 @@
+=render 'form', post: @post
 - @posts.each do |post|
   =render 'show', post: post, comment_depth: 3
-
-
-= link_to 'New Post', new_post_path
