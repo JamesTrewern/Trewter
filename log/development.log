@@ -34920,3 +34920,1541 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 59ms (Views: 53.6ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 17:35:22 -0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/james/.rvm/gems/ruby-2.5.8/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (12.4ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (3.7ms)
+  Rendered comments/_show.html.haml (19.3ms)
+  Rendered comments/_form.html.haml (2.2ms)
+  Rendered posts/_postComments.html.haml (32.0ms)
+  Rendered posts/_show.html.haml (146.5ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.4ms)
+  Rendered posts/_postComments.html.haml (1.5ms)
+  Rendered posts/_show.html.haml (2.3ms)
+  Rendered posts/index.html.haml within layouts/application (167.2ms)
+  Rendered shared/_header.html.haml (15.8ms)
+  Rendered shared/_footer.html.haml (1.1ms)
+Completed 200 OK in 281ms (Views: 216.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 17:35:46 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (3.9ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (3.4ms)
+  Rendered comments/_show.html.haml (7.5ms)
+  Rendered comments/_form.html.haml (1.9ms)
+  Rendered posts/_postComments.html.haml (17.3ms)
+  Rendered posts/_show.html.haml (22.0ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.3ms)
+  Rendered posts/_show.html.haml (2.1ms)
+  Rendered posts/index.html.haml within layouts/application (29.7ms)
+  Rendered shared/_header.html.haml (5.4ms)
+  Rendered shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 86ms (Views: 58.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 17:48:07 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (3.7ms)
+  Rendered posts/index.html.haml within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (can not load translations from /home/james/RubyWorkspace/TrewterBook/config/locales/en.yml: #<Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 50 column 9>):
+     8:             - @post.errors.full_messages.each do |message|
+     9:               %li= message
+    10:       .field
+    11:         = f.label :title
+    12:         = f.text_field :title
+    13:       .field
+    14:         = f.text_area :post_text, class: "textarea"
+  
+app/views/posts/_form.html.haml:11:in `block in _app_views_posts__form_html_haml__4254019870720213822_70266016820540'
+app/views/posts/_form.html.haml:3:in `_app_views_posts__form_html_haml__4254019870720213822_70266016820540'
+app/views/posts/index.html.haml:1:in `_app_views_posts_index_html_haml__3534846137284637228_70266016796020'
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 17:48:57 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (3.6ms)
+  Rendered posts/index.html.haml within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (can not load translations from /home/james/RubyWorkspace/TrewterBook/config/locales/en.yml: #<Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 50 column 9>):
+     8:             - @post.errors.full_messages.each do |message|
+     9:               %li= message
+    10:       .field
+    11:         = f.label :title
+    12:         = f.text_field :title
+    13:       .field
+    14:         = f.text_area :post_text, class: "textarea"
+  
+app/views/posts/_form.html.haml:11:in `block in _app_views_posts__form_html_haml__4254019870720213822_70266024585460'
+app/views/posts/_form.html.haml:3:in `_app_views_posts__form_html_haml__4254019870720213822_70266024585460'
+app/views/posts/index.html.haml:1:in `_app_views_posts_index_html_haml__3534846137284637228_70266024672340'
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 17:49:12 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (3.5ms)
+  Rendered posts/index.html.haml within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (can not load translations from /home/james/RubyWorkspace/TrewterBook/config/locales/en.yml: #<Psych::SyntaxError: (<unknown>): mapping values are not allowed in this context at line 50 column 9>):
+     8:             - @post.errors.full_messages.each do |message|
+     9:               %li= message
+    10:       .field
+    11:         = f.label :title
+    12:         = f.text_field :title
+    13:       .field
+    14:         = f.text_area :post_text, class: "textarea"
+  
+app/views/posts/_form.html.haml:11:in `block in _app_views_posts__form_html_haml__4254019870720213822_70266024605240'
+app/views/posts/_form.html.haml:3:in `_app_views_posts__form_html_haml__4254019870720213822_70266024605240'
+app/views/posts/index.html.haml:1:in `_app_views_posts_index_html_haml__3534846137284637228_70266024698740'
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 17:49:25 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (3.6ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (3.3ms)
+  Rendered comments/_show.html.haml (7.5ms)
+  Rendered comments/_form.html.haml (1.6ms)
+  Rendered posts/_postComments.html.haml (16.9ms)
+  Rendered posts/_show.html.haml (21.3ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.2ms)
+  Rendered posts/_show.html.haml (1.9ms)
+  Rendered posts/index.html.haml within layouts/application (28.3ms)
+  Rendered shared/_header.html.haml (5.5ms)
+  Rendered shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 80ms (Views: 52.0ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 17:49:52 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pz/knFb4tbNtuss4x2ZdQcxS03BrnQj/X66Zg22OWpyYj6nf1auLMMVnPpUk2ctGHzWiljIb5cF9oIW51NlEIg==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+  Rendering posts/new.html.haml within layouts/application
+  Rendered posts/_form.html.haml (187.5ms)
+  Rendered posts/new.html.haml within layouts/application (188.8ms)
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x00007fd02b197ed8>:0x00007fd02b1956d8>
+Did you mean?  @post):
+    1: .container
+    2:   .row
+    3:     = form_for post do |f|
+    4:       - if post.errors.any?
+    5:         #error_explanation
+    6:           %h2= "#{pluralize(post.errors.count, "error")} #{t('create_failed',class: "post")}"
+  
+app/views/posts/_form.html.haml:3:in `_app_views_posts__form_html_haml__4254019870720213822_70266026014840'
+app/views/posts/new.html.haml:3:in `_app_views_posts_new_html_haml__1261653449441565094_70266026491160'
+app/controllers/posts_controller.rb:33:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:28:in `create'
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 17:53:32 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pz/knFb4tbNtuss4x2ZdQcxS03BrnQj/X66Zg22OWpyYj6nf1auLMMVnPpUk2ctGHzWiljIb5cF9oIW51NlEIg==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::MissingTemplate (Missing template posts/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
+  * "/home/james/RubyWorkspace/TrewterBook/app/views"
+  * "/home/james/.rvm/gems/ruby-2.5.8/gems/devise-4.7.3/app/views"
+):
+  
+app/controllers/posts_controller.rb:33:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:28:in `create'
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 17:55:12 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pz/knFb4tbNtuss4x2ZdQcxS03BrnQj/X66Zg22OWpyYj6nf1auLMMVnPpUk2ctGHzWiljIb5cF9oIW51NlEIg==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+  Rendering posts/show.html.haml within layouts/application
+  Rendered posts/_show.html.haml (4.7ms)
+  Rendered posts/show.html.haml within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"posts", :id=>nil}, missing required keys: [:id]):
+    12:     %div.col-auto
+    13:       %div.btn-group{'role' => 'group'}
+    14:         -if current_user.profile == post.profile
+    15:           = button_to 'Edit', edit_post_path(post), method: :get, class: "btn btn-secondary"
+    16:           -if comment_depth > 0
+    17:             = button_to 'Delete', post, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
+    18:           -else
+  
+app/views/posts/_show.html.haml:15:in `_app_views_posts__show_html_haml__1823069755694559213_70266025687160'
+app/views/posts/show.html.haml:2:in `_app_views_posts_show_html_haml__2655285190481881736_70266026207240'
+app/controllers/posts_controller.rb:32:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:28:in `create'
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 17:57:30 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pz/knFb4tbNtuss4x2ZdQcxS03BrnQj/X66Zg22OWpyYj6nf1auLMMVnPpUk2ctGHzWiljIb5cF9oIW51NlEIg==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+  Rendering posts/show.html.haml within layouts/application
+  Rendered posts/_show.html.haml (3.9ms)
+  Rendered posts/show.html.haml within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"posts", :id=>nil}, missing required keys: [:id]):
+    12:     %div.col-auto
+    13:       %div.btn-group{'role' => 'group'}
+    14:         -if current_user.profile == post.profile
+    15:           = button_to 'Edit', edit_post_path(post), method: :get, class: "btn btn-secondary"
+    16:           -if comment_depth > 0
+    17:             = button_to 'Delete', post, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
+    18:           -else
+  
+app/views/posts/_show.html.haml:15:in `_app_views_posts__show_html_haml__1823069755694559213_70266003463520'
+app/views/posts/show.html.haml:2:in `_app_views_posts_show_html_haml__2655285190481881736_70266003653240'
+app/controllers/posts_controller.rb:32:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:28:in `create'
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 18:01:36 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pz/knFb4tbNtuss4x2ZdQcxS03BrnQj/X66Zg22OWpyYj6nf1auLMMVnPpUk2ctGHzWiljIb5cF9oIW51NlEIg==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+  Rendering posts/show.html.haml within layouts/application
+  Rendered posts/_show.html.haml (4.6ms)
+  Rendered posts/show.html.haml within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"posts", :id=>nil}, missing required keys: [:id]):
+    12:     %div.col-auto
+    13:       %div.btn-group{'role' => 'group'}
+    14:         -if current_user.profile == post.profile
+    15:           = button_to 'Edit', edit_post_path(post), method: :get, class: "btn btn-secondary"
+    16:           -if comment_depth > 0
+    17:             = button_to 'Delete', post, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
+    18:           -else
+  
+app/views/posts/_show.html.haml:15:in `_app_views_posts__show_html_haml__1823069755694559213_70266010966920'
+app/views/posts/show.html.haml:2:in `_app_views_posts_show_html_haml__2655285190481881736_70266007624060'
+app/controllers/posts_controller.rb:32:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:28:in `create'
+Started POST "/__web_console/repl_sessions/bd0fb91d5eb0d7a38467f7732f8fbb75/trace" for 127.0.0.1 at 2020-12-12 18:48:46 -0800
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 18:49:37 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pz/knFb4tbNtuss4x2ZdQcxS03BrnQj/X66Zg22OWpyYj6nf1auLMMVnPpUk2ctGHzWiljIb5cF9oIW51NlEIg==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+Redirected to 
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `index_url' for #<PostsController:0x00007fd02a497328>
+Did you mean?  index):
+  
+app/controllers/posts_controller.rb:32:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:28:in `create'
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 18:49:52 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pz/knFb4tbNtuss4x2ZdQcxS03BrnQj/X66Zg22OWpyYj6nf1auLMMVnPpUk2ctGHzWiljIb5cF9oIW51NlEIg==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:29
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 47ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 18:49:52 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.0ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (4.4ms)
+  Rendered comments/_show.html.haml (9.1ms)
+  Rendered comments/_form.html.haml (1.7ms)
+  Rendered posts/_postComments.html.haml (18.4ms)
+  Rendered posts/_show.html.haml (23.2ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.3ms)
+  Rendered posts/_show.html.haml (2.1ms)
+  Rendered posts/index.html.haml within layouts/application (29.1ms)
+  Rendered shared/_header.html.haml (6.1ms)
+  Rendered shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 57ms (Views: 53.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 18:51:00 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+Completed 404 Not Found in 28ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/posts_controller.rb:66:in `set_post'
+app/controllers/posts_controller.rb:10:in `index'
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 18:53:10 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.5ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (4.0ms)
+  Rendered comments/_show.html.haml (9.1ms)
+  Rendered comments/_form.html.haml (1.9ms)
+  Rendered posts/_postComments.html.haml (21.0ms)
+  Rendered posts/_show.html.haml (25.8ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.4ms)
+  Rendered posts/_postComments.html.haml (1.4ms)
+  Rendered posts/_show.html.haml (2.2ms)
+  Rendered posts/index.html.haml within layouts/application (32.8ms)
+  Rendered shared/_header.html.haml (12.0ms)
+  Rendered shared/_footer.html.haml (0.8ms)
+Completed 200 OK in 96ms (Views: 67.2ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 18:53:20 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xnqljlCqf9NtUBcXB7YA5+FtgRcG+49Puzv6plZgB8L5yujN0/lBUMWN4rrkCZbgMgrw8V99YnGZNeac7zcZfA==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:33
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:33
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:33
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 18:53:20 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.4ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (3.7ms)
+  Rendered comments/_show.html.haml (7.9ms)
+  Rendered comments/_form.html.haml (1.9ms)
+  Rendered posts/_postComments.html.haml (13.8ms)
+  Rendered posts/_show.html.haml (18.3ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.4ms)
+  Rendered posts/_show.html.haml (2.2ms)
+  Rendered posts/index.html.haml within layouts/application (24.8ms)
+  Rendered shared/_header.html.haml (6.6ms)
+  Rendered shared/_footer.html.haml (0.8ms)
+Completed 200 OK in 57ms (Views: 53.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 18:53:43 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hmWtbUvwpgpj9aUesxIMm+DOhvQefGfu6zdkFH5gsVS51eAuyKOYicsoULNQrZqcM6n3Ekf6itDJOXguxzev6g==", "post"=>{"title"=>"", "post_text"=>"k"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:33
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:33
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:33
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 18:53:43 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.8ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (3.6ms)
+  Rendered comments/_show.html.haml (8.2ms)
+  Rendered comments/_form.html.haml (1.8ms)
+  Rendered posts/_postComments.html.haml (13.0ms)
+  Rendered posts/_show.html.haml (19.2ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.3ms)
+  Rendered posts/_show.html.haml (2.1ms)
+  Rendered posts/index.html.haml within layouts/application (26.0ms)
+  Rendered shared/_header.html.haml (5.9ms)
+  Rendered shared/_footer.html.haml (0.8ms)
+Completed 200 OK in 61ms (Views: 56.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 18:55:38 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.6ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/posts_controller.rb:10:in `index'
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 18:55:55 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.3ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (3.5ms)
+  Rendered comments/_show.html.haml (7.9ms)
+  Rendered comments/_form.html.haml (1.9ms)
+  Rendered posts/_postComments.html.haml (17.4ms)
+  Rendered posts/_show.html.haml (21.6ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.4ms)
+  Rendered posts/_postComments.html.haml (1.4ms)
+  Rendered posts/_show.html.haml (2.2ms)
+  Rendered posts/index.html.haml within layouts/application (27.9ms)
+  Rendered shared/_header.html.haml (5.2ms)
+  Rendered shared/_footer.html.haml (0.9ms)
+Completed 200 OK in 87ms (Views: 51.4ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 18:59:13 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JztpW/sya8MaDR+oqnSKSwlnpE3SEebPl68aYCL6CjMYiyQYeGFVQLLQ6gVJyxxM2gDVq4uXC/G1oQZam60UjQ==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.7ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/posts_controller.rb:12:in `index'
+app/controllers/posts_controller.rb:37:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:33:in `create'
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 18:59:33 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JztpW/sya8MaDR+oqnSKSwlnpE3SEebPl68aYCL6CjMYiyQYeGFVQLLQ6gVJyxxM2gDVq4uXC/G1oQZam60UjQ==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+Redirected to 
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionController::UnfilteredParameters (unable to convert unpermitted parameters to hash):
+  
+app/controllers/posts_controller.rb:37:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:33:in `create'
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 19:02:30 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JztpW/sya8MaDR+oqnSKSwlnpE3SEebPl68aYCL6CjMYiyQYeGFVQLLQ6gVJyxxM2gDVq4uXC/G1oQZam60UjQ==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+Redirected to 
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionController::UnfilteredParameters (unable to convert unpermitted parameters to hash):
+  
+app/controllers/posts_controller.rb:37:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:33:in `create'
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 19:02:48 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JztpW/sya8MaDR+oqnSKSwlnpE3SEebPl68aYCL6CjMYiyQYeGFVQLLQ6gVJyxxM2gDVq4uXC/G1oQZam60UjQ==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+Redirected to 
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionController::UnfilteredParameters (unable to convert unpermitted parameters to hash):
+  
+app/controllers/posts_controller.rb:37:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:33:in `create'
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 19:04:10 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JztpW/sya8MaDR+oqnSKSwlnpE3SEebPl68aYCL6CjMYiyQYeGFVQLLQ6gVJyxxM2gDVq4uXC/G1oQZam60UjQ==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+Redirected to 
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionController::UnfilteredParameters (unable to convert unpermitted parameters to hash):
+  
+app/controllers/posts_controller.rb:37:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:33:in `create'
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 19:04:45 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JztpW/sya8MaDR+oqnSKSwlnpE3SEebPl68aYCL6CjMYiyQYeGFVQLLQ6gVJyxxM2gDVq4uXC/G1oQZam60UjQ==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 2.5ms)
+
+
+  
+NoMethodError (undefined method `id' for #<ActionController::Parameters:0x00007fd02a6856a8>):
+  
+app/controllers/posts_controller.rb:37:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:33:in `create'
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 19:08:22 -0800
+  
+SyntaxError (/home/james/RubyWorkspace/TrewterBook/app/controllers/posts_controller.rb:39: syntax error, unexpected ':', expecting '}'
+        format.html { render: index}
+                            ^
+/home/james/RubyWorkspace/TrewterBook/app/controllers/posts_controller.rb:78: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/posts_controller.rb:39: syntax error, unexpected ':', expecting '}'
+app/controllers/posts_controller.rb:78: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 19:09:20 -0800
+  
+SyntaxError (/home/james/RubyWorkspace/TrewterBook/app/controllers/posts_controller.rb:37: syntax error, unexpected ':', expecting '}'
+        format.html { render: index}
+                            ^
+/home/james/RubyWorkspace/TrewterBook/app/controllers/posts_controller.rb:76: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/posts_controller.rb:37: syntax error, unexpected ':', expecting '}'
+app/controllers/posts_controller.rb:76: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 19:09:31 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.6ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (4.2ms)
+  Rendered comments/_show.html.haml (14.5ms)
+  Rendered comments/_form.html.haml (1.8ms)
+  Rendered posts/_postComments.html.haml (25.2ms)
+  Rendered posts/_show.html.haml (31.3ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.3ms)
+  Rendered posts/_show.html.haml (2.0ms)
+  Rendered posts/index.html.haml within layouts/application (38.0ms)
+  Rendered shared/_header.html.haml (5.8ms)
+  Rendered shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 94ms (Views: 63.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 19:09:48 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.3ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (3.5ms)
+  Rendered comments/_show.html.haml (8.2ms)
+  Rendered comments/_form.html.haml (1.6ms)
+  Rendered posts/_postComments.html.haml (23.8ms)
+  Rendered posts/_show.html.haml (28.6ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.2ms)
+  Rendered posts/_show.html.haml (1.9ms)
+  Rendered posts/index.html.haml within layouts/application (34.6ms)
+  Rendered shared/_header.html.haml (6.2ms)
+  Rendered shared/_footer.html.haml (0.8ms)
+Completed 200 OK in 90ms (Views: 59.9ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 19:09:51 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lwXzDZBIAPEAwmBmXAXfSvETJPeAsaxsF++fGQnNRVqotb5OExs+cqgflcu/uklNInRVEdk3QVI14YMjsJpb5A==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:38
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:38
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (3.0ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (4.7ms)
+  Rendered comments/_show.html.haml (9.3ms)
+  Rendered comments/_form.html.haml (2.1ms)
+  Rendered posts/_postComments.html.haml (14.4ms)
+  Rendered posts/_show.html.haml (19.3ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.4ms)
+  Rendered posts/_postComments.html.haml (1.6ms)
+  Rendered posts/_show.html.haml (7.6ms)
+  Rendered posts/index.html.haml within layouts/application (32.1ms)
+  Rendered shared/_header.html.haml (5.4ms)
+  Rendered shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 63ms (Views: 57.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 19:10:18 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.5ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (9.7ms)
+  Rendered comments/_show.html.haml (14.6ms)
+  Rendered comments/_form.html.haml (1.9ms)
+  Rendered posts/_postComments.html.haml (24.4ms)
+  Rendered posts/_show.html.haml (28.9ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.2ms)
+  Rendered posts/_show.html.haml (1.9ms)
+  Rendered posts/index.html.haml within layouts/application (35.1ms)
+  Rendered shared/_header.html.haml (5.8ms)
+  Rendered shared/_footer.html.haml (0.8ms)
+Completed 200 OK in 89ms (Views: 59.7ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 19:10:20 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0olwmXPBjBRBgutBqavcbwVifTLo4aac+Yhw/9qfExztOT3a8JKyl+lfHuxKFEpo1gUM1LFnS6LbhmzFY8gNog==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (3.3ms)
+  Rendered posts/index.html.haml within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: =render 'form', post: @post
+    2: - @posts.each do |post|
+    3:   =render 'show', post: post, comment_depth: 3
+  
+app/views/posts/index.html.haml:2:in `_app_views_posts_index_html_haml__3534846137284637228_70266019066020'
+app/controllers/posts_controller.rb:38:in `block (2 levels) in create'
+app/controllers/posts_controller.rb:33:in `create'
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 19:10:27 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0olwmXPBjBRBgutBqavcbwVifTLo4aac+Yhw/9qfExztOT3a8JKyl+lfHuxKFEpo1gUM1LFnS6LbhmzFY8gNog==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:38
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:38
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.9ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (4.6ms)
+  Rendered comments/_show.html.haml (10.8ms)
+  Rendered comments/_form.html.haml (2.3ms)
+  Rendered posts/_postComments.html.haml (22.4ms)
+  Rendered posts/_show.html.haml (32.7ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.4ms)
+  Rendered posts/_postComments.html.haml (1.5ms)
+  Rendered posts/_show.html.haml (2.3ms)
+  Rendered posts/index.html.haml within layouts/application (39.8ms)
+  Rendered shared/_header.html.haml (18.0ms)
+  Rendered shared/_footer.html.haml (2.3ms)
+Completed 200 OK in 125ms (Views: 92.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 19:29:01 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (8.1ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:5
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (3.9ms)
+  Rendered comments/_show.html.haml (9.4ms)
+  Rendered comments/_form.html.haml (2.5ms)
+  Rendered posts/_postComments.html.haml (20.7ms)
+  Rendered posts/_show.html.haml (26.3ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.4ms)
+  Rendered posts/_postComments.html.haml (1.5ms)
+  Rendered posts/_show.html.haml (2.4ms)
+  Rendered posts/index.html.haml within layouts/application (39.2ms)
+  Rendered shared/_header.html.haml (6.5ms)
+  Rendered shared/_footer.html.haml (0.9ms)
+Completed 200 OK in 106ms (Views: 74.1ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 20:08:03 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wmES0XX1J3XmN+l+P2AbWWDd+0bbcmVNwXpTTbE6SqP90V+S9qYZ9k7qHNPc341es7qKoIL0iHPjdE93CG1UHQ==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:34
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (3.6ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:6
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (4.2ms)
+  Rendered comments/_show.html.haml (10.3ms)
+  Rendered comments/_form.html.haml (10.0ms)
+  Rendered posts/_postComments.html.haml (31.4ms)
+  Rendered posts/_show.html.haml (36.9ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.4ms)
+  Rendered posts/_postComments.html.haml (1.4ms)
+  Rendered posts/_show.html.haml (2.5ms)
+  Rendered posts/index.html.haml within layouts/application (45.1ms)
+  Rendered shared/_header.html.haml (7.3ms)
+  Rendered shared/_footer.html.haml (1.0ms)
+Completed 200 OK in 112ms (Views: 75.2ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 20:08:07 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iEnTKTO7rSOtT9p1PSKtE60h9H6TrthAhUTu3+LS9jK3+Z5qsOiToAWSL9jenTsUfkaFmMooNX6nSvLlW4XojA==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:34
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (3.2ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:6
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (4.2ms)
+  Rendered comments/_show.html.haml (9.1ms)
+  Rendered comments/_form.html.haml (2.1ms)
+  Rendered posts/_postComments.html.haml (14.6ms)
+  Rendered posts/_show.html.haml (20.8ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.4ms)
+  Rendered posts/_postComments.html.haml (1.7ms)
+  Rendered posts/_show.html.haml (2.7ms)
+  Rendered posts/index.html.haml within layouts/application (28.9ms)
+  Rendered shared/_header.html.haml (13.2ms)
+  Rendered shared/_footer.html.haml (0.9ms)
+Completed 200 OK in 71ms (Views: 65.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 20:08:09 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"COXaf1FbxtsgT3U0eouxQmqB/R1T8AxBEbz9BQtdopw3VZc80gj4WIiSgJmZNCdFueaM+wp24X8zsuE/sgq8Ig==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:30
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:34
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:34
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.8ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:6
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (4.2ms)
+  Rendered comments/_show.html.haml (8.7ms)
+  Rendered comments/_form.html.haml (2.0ms)
+  Rendered posts/_postComments.html.haml (13.7ms)
+  Rendered posts/_show.html.haml (18.4ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.3ms)
+  Rendered posts/_show.html.haml (2.3ms)
+  Rendered posts/index.html.haml within layouts/application (25.5ms)
+  Rendered shared/_header.html.haml (7.0ms)
+  Rendered shared/_footer.html.haml (0.9ms)
+Completed 200 OK in 61ms (Views: 55.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 20:11:13 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/models/post.rb:10
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/models/post.rb:10
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.2ms)
+  Rendered posts/index.html.haml within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: .container
+    2:   .row
+    3:     = form_for post do |f|
+    4:       - if post.errors.any?
+    5:         #error_explanation
+    6:           %h2= "#{pluralize(post.errors.count, "error")} #{t('create_failed',class: "post")}"
+  
+app/views/posts/_form.html.haml:3:in `_app_views_posts__form_html_haml__4254019870720213822_70266001471140'
+app/views/posts/index.html.haml:1:in `_app_views_posts_index_html_haml__3534846137284637228_70266018002900'
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 20:11:22 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/models/post.rb:10
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/models/post.rb:10
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.2ms)
+  Rendered posts/index.html.haml within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: .container
+    2:   .row
+    3:     = form_for post do |f|
+    4:       - if post.errors.any?
+    5:         #error_explanation
+    6:           %h2= "#{pluralize(post.errors.count, "error")} #{t('create_failed',class: "post")}"
+  
+app/views/posts/_form.html.haml:3:in `_app_views_posts__form_html_haml__4254019870720213822_70266022246820'
+app/views/posts/index.html.haml:1:in `_app_views_posts_index_html_haml__3534846137284637228_70266022422560'
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 20:11:42 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.2ms)
+  Rendered posts/index.html.haml within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: .container
+    2:   .row
+    3:     = form_for post do |f|
+    4:       - if post.errors.any?
+    5:         #error_explanation
+    6:           %h2= "#{pluralize(post.errors.count, "error")} #{t('create_failed',class: "post")}"
+  
+app/views/posts/_form.html.haml:3:in `_app_views_posts__form_html_haml__4254019870720213822_70266015878420'
+app/views/posts/index.html.haml:1:in `_app_views_posts_index_html_haml__3534846137284637228_70266015964020'
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 20:12:06 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (3.0ms)
+  Rendered posts/index.html.haml within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: .container
+    2:   .row
+    3:     = form_for post do |f|
+    4:       - if post.errors.any?
+    5:         #error_explanation
+    6:           %h2= "#{pluralize(post.errors.count, "error")} #{t('create_failed',class: "post")}"
+  
+app/views/posts/_form.html.haml:3:in `_app_views_posts__form_html_haml__4254019870720213822_70266009730600'
+app/views/posts/index.html.haml:1:in `_app_views_posts_index_html_haml__3534846137284637228_70266010632720'
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 20:12:54 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.7ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/views/posts/index.html.haml:2
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:6
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (8.1ms)
+  Rendered comments/_show.html.haml (18.1ms)
+  Rendered comments/_form.html.haml (5.8ms)
+  Rendered posts/_postComments.html.haml (34.6ms)
+  Rendered posts/_show.html.haml (40.1ms)
+  Rendered posts/index.html.haml within layouts/application (45.4ms)
+  Rendered shared/_header.html.haml (19.2ms)
+  Rendered shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 134ms (Views: 104.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 20:13:10 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/models/post.rb:10
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/models/post.rb:10
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.5ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:6
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (3.4ms)
+  Rendered comments/_show.html.haml (8.3ms)
+  Rendered comments/_form.html.haml (1.7ms)
+  Rendered posts/_postComments.html.haml (24.1ms)
+  Rendered posts/_show.html.haml (29.2ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.4ms)
+  Rendered posts/_postComments.html.haml (1.3ms)
+  Rendered posts/_show.html.haml (2.1ms)
+  Rendered posts/index.html.haml within layouts/application (35.8ms)
+  Rendered shared/_header.html.haml (5.7ms)
+  Rendered shared/_footer.html.haml (0.8ms)
+Completed 200 OK in 91ms (Views: 60.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 20:14:58 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KcyDc6nYOznrS6JrhsB5tg4JW5+H5CD6Sm4OKBequxcWfM4wKosFukOWV8Zlf++x3W4qed5izcRoYBISrv2lqQ==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:27
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:27
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/controllers/posts_controller.rb:31
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/controllers/posts_controller.rb:31
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.5ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:6
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (3.8ms)
+  Rendered comments/_show.html.haml (8.2ms)
+  Rendered comments/_form.html.haml (1.9ms)
+  Rendered posts/_postComments.html.haml (12.7ms)
+  Rendered posts/_show.html.haml (17.2ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.4ms)
+  Rendered posts/_postComments.html.haml (1.7ms)
+  Rendered posts/_show.html.haml (2.7ms)
+  Rendered posts/index.html.haml within layouts/application (24.3ms)
+  Rendered shared/_header.html.haml (5.6ms)
+  Rendered shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 55ms (Views: 48.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 20:15:14 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/models/post.rb:10
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/models/post.rb:10
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.1ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:6
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (3.5ms)
+  Rendered comments/_show.html.haml (8.4ms)
+  Rendered comments/_form.html.haml (1.7ms)
+  Rendered posts/_postComments.html.haml (17.1ms)
+  Rendered posts/_show.html.haml (21.3ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.2ms)
+  Rendered posts/_show.html.haml (1.9ms)
+  Rendered posts/index.html.haml within layouts/application (26.9ms)
+  Rendered shared/_header.html.haml (12.4ms)
+  Rendered shared/_footer.html.haml (0.8ms)
+Completed 200 OK in 86ms (Views: 60.1ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-12 20:15:15 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y0AxtqjQNFsRqnPnULdVJGw/OboisWwkEowQD5sgHDhc8Hz1K4MK2Ll3hkqzCMMjv1hIXHs3gRowggw1IncChg==", "post"=>{"title"=>"", "post_text"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:27
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:27
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/models/post.rb:10
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/models/post.rb:10
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (2.8ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:6
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (3.5ms)
+  Rendered comments/_show.html.haml (7.7ms)
+  Rendered comments/_form.html.haml (2.3ms)
+  Rendered posts/_postComments.html.haml (13.1ms)
+  Rendered posts/_show.html.haml (18.1ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.3ms)
+  Rendered posts/_show.html.haml (2.1ms)
+  Rendered posts/index.html.haml within layouts/application (24.9ms)
+  Rendered shared/_header.html.haml (5.3ms)
+  Rendered shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 54ms (Views: 48.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-12-12 20:20:30 -0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" IN (SELECT "profiles"."id" FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?)[0m  [["follower_id", 2]]
+  ↳ app/models/post.rb:10
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."profile_id" = ?[0m  [["profile_id", 2]]
+  ↳ app/models/post.rb:10
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/_form.html.haml (4.3ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_show.html.haml:6
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_show.html.haml:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles" INNER JOIN "follows" ON "profiles"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 2]]
+  ↳ app/views/profiles/_listShow.html.haml:25
+  Rendered profiles/_listShow.html.haml (5.4ms)
+  Rendered comments/_show.html.haml (10.8ms)
+  Rendered comments/_form.html.haml (1.9ms)
+  Rendered posts/_postComments.html.haml (21.4ms)
+  Rendered posts/_show.html.haml (26.7ms)
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/_postComments.html.haml:3
+  Rendered comments/_form.html.haml (0.3ms)
+  Rendered posts/_postComments.html.haml (1.3ms)
+  Rendered posts/_show.html.haml (2.2ms)
+  Rendered posts/index.html.haml within layouts/application (35.1ms)
+  Rendered shared/_header.html.haml (6.2ms)
+  Rendered shared/_footer.html.haml (0.8ms)
+Completed 200 OK in 91ms (Views: 61.9ms | ActiveRecord: 2.3ms)
+
+

@@ -6,4 +6,7 @@ class Post < ApplicationRecord
   scope :followed, ->(user) {
     followedProfiles = user.profile.followed
     where(:profile => followedProfiles)}
+  scope :feed, ->(user) {
+    Post.followed(user) + user.profile.posts
+   }
 end

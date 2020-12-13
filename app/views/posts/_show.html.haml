@@ -1,26 +1,31 @@
 %p#notice= notice
-%div.container{'id' => "postContainer#{post.id}"}
-  %div.row
-    %div.col-auto
+.container{'id' => "postContainer#{post.id}"}
+  .row
+    .col-auto
+      -# if there is a profile picture display that, otherwise use default profile picture
       -if post.profile.picture_url
         = image_tag(post.profile.picture_url)
       -else
         = image_tag('defaultProfile.png')
-    %div.col-auto
+    .col-auto
       = post.profile.first_name
       = post.profile.surname
-    %div.col-auto
-      %div.btn-group{'role' => 'group'}
+    .col-auto
+      .btn-group{'role' => 'group'}
+        -# if post belongs to user allow them to edit or delete
         -if current_user.profile == post.profile
-          = button_to 'Edit', edit_post_path(post), method: :get, class: "btn btn-secondary"
+          = button_to t('.edit'), edit_post_path(post), method: :get, class: "btn btn-secondary"
+          -#if comment_depth is 0 this means the show route is being used
+          -#if comment_depth is greater than 0 then either the create or index route is being used
+          -#if in the create/index route delete via ajax otherwise delete by html
           -if comment_depth > 0
-            = button_to 'Delete', post, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"
+            = button_to t('.delete'), post, method: :delete, remote: true, data: { confirm: t('confirm') }, class: "btn btn-secondary"
           -else
-            = button_to 'Delete', post, method: :delete, class: "btn btn-secondary"
-  %div.row
+            = button_to t('.delete'), post, method: :delete, data: { confirm: t('confirm') }, class: "btn btn-secondary"
+  .row
     %h
       = post.title
-  %div.row
+  .row
     %p
       = post.post_text
     -if post.image_url

@@ -1,9 +1,9 @@
-%div.container
-  %div.row
+.container
+  .row
     = form_for post do |f|
       - if post.errors.any?
         #error_explanation
-          %h2= "#{pluralize(post.errors.count, "error")} prohibited this post from being saved:"
+          %h2= "#{pluralize(post.errors.count, "error")} #{t('create_failed',class: "post")}"
           %ul
             - @post.errors.full_messages.each do |message|
               %li= message
@@ -13,4 +13,4 @@
       .field
         = f.text_area :post_text, class: "textarea"
       .actions
-        = f.submit 'Create post'
+        = f.submit t('.create_post')
